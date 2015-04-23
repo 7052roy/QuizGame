@@ -78,7 +78,6 @@ class Question extends Sprite
 		}
 		
 		trace(correctAnswer);
-		//correctAnswer = 2;
 		main.questionTime = 4000;
 		
 		main.lastUpdate = getTimer();
