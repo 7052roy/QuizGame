@@ -18,7 +18,7 @@ import openfl.display.BitmapData;
 class Question extends Sprite
 {
 	
-	var questionTextFormat:TextFormat = new TextFormat("Arial", 28, 0x000000, false, false, false, null, null,TextFormatAlign.CENTER);
+	public var questionTextFormat:TextFormat = new TextFormat("Arial", 28, 0x000000, false, false, false, null, null,TextFormatAlign.CENTER);
 	var questionText:TextField = new TextField();
 	var answerOptions:Array<TextField> = new Array<TextField>();
 	public var correctAnswer:String;
@@ -26,6 +26,7 @@ class Question extends Sprite
 	public var image:Bitmap;
 	public var currentQuestion:Int = 1;
 	var questionDb = null;
+	var answerCount:Int = 0;
 
 	public function new(reference) 
 	{
@@ -46,7 +47,6 @@ class Question extends Sprite
 		addChild (questionText);
 		
 		stage.addEventListener(KeyboardEvent.KEY_DOWN, onKeyPressed);
-		//fillFields();
 	}
 	
 	public function createAnswer()
@@ -66,7 +66,7 @@ class Question extends Sprite
 	
 	public function fillFields()
 	{
-		var answerCount:Int = 0;
+		
 		questionDb = main.connect.request("SELECT * FROM question WHERE Question_ID =" + currentQuestion );
 		var answerDb = main.connect.request("SELECT * FROM answer WHERE Question_ID =" + currentQuestion );
 		
@@ -78,10 +78,12 @@ class Question extends Sprite
 			var scale:Float = 0.1;
 			var bitmapData:BitmapData = Assets.getBitmapData("img/"+picture+".jpg");
 			image = new Bitmap( bitmapData );
-			image.scaleX = scale;
-			image.scaleY = scale;
+			//image.scaleX = scale;
+			//image.scaleY = scale;
 			image.x = 150;
 			image.y = 30;
+			image.width = 500;
+			image.height = 340;
 			addChild( image );
 		}
 		
@@ -89,10 +91,10 @@ class Question extends Sprite
 		{
 			answerOptions[answerCount].text = row.PossibleAnswer;
 			answerCount ++;
-			trace(row.PossibleAnswer);
+			//trace(row.PossibleAnswer);
 		}
 		
-		main.questionTime = 15000;
+		main.questionTime = 1000;
 		
 		main.lastUpdate = getTimer();
 	}
@@ -113,6 +115,7 @@ class Question extends Sprite
 	public function resetQuestion()
 	{
 		removeChild(image);
+		answerCount = 0;
 	}
 	
 }

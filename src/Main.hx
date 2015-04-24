@@ -10,7 +10,10 @@ import openfl.text.TextFormatAlign;
 import openfl.ui.Keyboard;
 import openfl.Lib.getTimer;
 import sys.db.Mysql;
-
+import openfl.media.Sound;
+import openfl.media.SoundChannel;
+import openfl.Assets;
+import openfl.media.SoundTransform;
 
 /**
  * ...
@@ -23,6 +26,8 @@ class Main extends Sprite
 	var inited:Bool;
 	var question:Question;	
 	public var checkAnswer:CheckAnswer;
+	var sound = Assets.getSound ("assets/music/song.ogg");
+    var gameMusic:SoundChannel;
 	
 	
 	public var questionTime:Int = 10000;
@@ -53,9 +58,12 @@ class Main extends Sprite
 		checkAnswer  = new CheckAnswer(this, question);
 		question.createAnswer();
 		question.createQuestion();
+		gameMusic = sound.play();
+		gameMusic.soundTransform = new SoundTransform(0.3);
 		
 		stage.color = 0xffffff;
 		timerText = new TextField();
+		timerText.defaultTextFormat = question.questionTextFormat;
 		addChild(timerText);
 		
 		addEventListener(Event.ENTER_FRAME, update);
@@ -64,18 +72,24 @@ class Main extends Sprite
 	function update(event:Event)
 	{
 		var currentTime:Int = Lib.getTimer();
-		var timePassed = currentTime - lastUpdate + 1;
+		var timePassed:Int  = currentTime - lastUpdate;
 		
 		lastUpdate = currentTime;
 		
 		questionTime -= timePassed;
-		timerText.text = questionTime + "";
+		//timerText.text = questionTime + "";
 		
 		if (questionTime < 0)
 		{
-			question.resetQuestion();
-			question.fillFields();
-			question.currentQuestion ++;
+			if (question.currentQuestion < 5)
+			{
+				question.resetQuestion();
+				question.fillFields();
+				question.currentQuestion ++;
+			}else {
+				//sound.close();
+				gameMusic.stop();
+			}
 		}
 	}
 	/* SETUP */
