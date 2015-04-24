@@ -25,7 +25,7 @@ class Main extends Sprite
 	public var checkAnswer:CheckAnswer;
 	
 	
-	public var questionTime:Int = 4000;
+	public var questionTime:Int = 10000;
 	public var lastUpdate:Int;
 	var timerText:TextField;
 	public var connect = Mysql.connect({ 
@@ -45,6 +45,8 @@ class Main extends Sprite
 	
 	function init() 
 	{
+		questionTime = 2000;
+		lastUpdate = getTimer();
 		question  = new Question(this);
 		addChild(question);
 		
@@ -62,7 +64,7 @@ class Main extends Sprite
 	function update(event:Event)
 	{
 		var currentTime:Int = Lib.getTimer();
-		var timePassed = currentTime - lastUpdate;
+		var timePassed = currentTime - lastUpdate + 1;
 		
 		lastUpdate = currentTime;
 		
@@ -71,7 +73,9 @@ class Main extends Sprite
 		
 		if (questionTime < 0)
 		{
+			question.resetQuestion();
 			question.fillFields();
+			question.currentQuestion ++;
 		}
 	}
 	/* SETUP */
@@ -97,7 +101,7 @@ class Main extends Sprite
 	{
 		// static entry point
 		Lib.current.stage.align = flash.display.StageAlign.TOP_LEFT;
-		Lib.current.stage.scaleMode = flash.display.StageScaleMode.NO_SCALE;
+		Lib.current.stage.scaleMode = flash.display.StageScaleMode.EXACT_FIT;
 		Lib.current.addChild(new Main());
 	}
 }

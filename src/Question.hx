@@ -23,8 +23,8 @@ class Question extends Sprite
 	var answerOptions:Array<TextField> = new Array<TextField>();
 	public var correctAnswer:String;
 	var main:Main;
-	var image:Bitmap;
-	var currentQuestion:Int = 1;
+	public var image:Bitmap;
+	public var currentQuestion:Int = 1;
 	var questionDb = null;
 
 	public function new(reference) 
@@ -46,7 +46,7 @@ class Question extends Sprite
 		addChild (questionText);
 		
 		stage.addEventListener(KeyboardEvent.KEY_DOWN, onKeyPressed);
-		fillFields();
+		//fillFields();
 	}
 	
 	public function createAnswer()
@@ -68,15 +68,13 @@ class Question extends Sprite
 	{
 		var answerCount:Int = 0;
 		questionDb = main.connect.request("SELECT * FROM question WHERE Question_ID =" + currentQuestion );
-		var answerDb = main.connect.request("SELECT * FROM answer WHERE Question_ID = 1");
+		var answerDb = main.connect.request("SELECT * FROM answer WHERE Question_ID =" + currentQuestion );
 		
 		for (row in questionDb) 
 		{
 			questionText.text = row.Question ;
 			correctAnswer = row.CorrectAnswer;
-			trace(row.Picture);
 			var picture = row.Picture;
-			trace(row.Picture);
 			var scale:Float = 0.1;
 			var bitmapData:BitmapData = Assets.getBitmapData("img/"+picture+".jpg");
 			image = new Bitmap( bitmapData );
@@ -94,7 +92,7 @@ class Question extends Sprite
 			trace(row.PossibleAnswer);
 		}
 		
-		main.questionTime = 4000;
+		main.questionTime = 15000;
 		
 		main.lastUpdate = getTimer();
 	}
@@ -110,6 +108,11 @@ class Question extends Sprite
 			case Keyboard.NUMBER_3:
 				main.checkAnswer.checkAnswer( answerOptions[2].text );
 		}
+	}
+	
+	public function resetQuestion()
+	{
+		removeChild(image);
 	}
 	
 }
