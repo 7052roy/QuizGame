@@ -52,7 +52,6 @@ class Main extends Sprite
 		question.createAnswer();
 		question.createQuestion();
 		
-
 		stage.color = 0xffffff;
 		timerText = new TextField();
 		addChild(timerText);

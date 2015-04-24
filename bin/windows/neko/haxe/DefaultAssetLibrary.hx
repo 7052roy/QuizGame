@@ -45,11 +45,16 @@ class DefaultAssetLibrary extends AssetLibrary {
 		
 		#if flash
 		
+		path.set ("img/Dominator.jpg", "img/Dominator.jpg");
+		type.set ("img/Dominator.jpg", AssetType.IMAGE);
 		
 		
 		#elseif html5
 		
 		var id;
+		id = "img/Dominator.jpg";
+		path.set (id, id);
+		type.set (id, AssetType.IMAGE);
 		
 		
 		var assetsPrefix = ApplicationMain.config.assetsPrefix;
@@ -64,11 +69,13 @@ class DefaultAssetLibrary extends AssetLibrary {
 		#if openfl
 		
 		
+		
 		#end
 		
 		#if (windows || mac || linux)
 		
 		var useManifest = false;
+		useManifest = true;
 		
 		
 		if (useManifest) {
@@ -672,7 +679,9 @@ class DefaultAssetLibrary extends AssetLibrary {
 
 
 
+
 #elseif html5
+
 
 
 

@@ -15,7 +15,7 @@ class CheckAnswer
 		question = question1;
 	}
 	
-	public function checkAnswer(givenAnswer:Int):Void
+	public function checkAnswer(givenAnswer:String):Void
 	{
 		if (givenAnswer == question.correctAnswer)
 		{
