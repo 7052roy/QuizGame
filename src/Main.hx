@@ -10,10 +10,10 @@ import openfl.text.TextFormatAlign;
 import openfl.ui.Keyboard;
 import openfl.Lib.getTimer;
 import sys.db.Mysql;
-import openfl.media.Sound;
-import openfl.media.SoundChannel;
 import openfl.Assets;
-import openfl.media.SoundTransform;
+import flixel.system.FlxSound;
+import flixel.FlxG;
+
 
 /**
  * ...
@@ -26,13 +26,11 @@ class Main extends Sprite
 	var inited:Bool;
 	var question:Question;	
 	public var checkAnswer:CheckAnswer;
-	var sound = Assets.getSound ("assets/music/song.ogg");
-    var gameMusic:SoundChannel;
-	
-	
+    var gameMusic:FlxSound;
 	public var questionTime:Int = 10000;
 	public var lastUpdate:Int;
 	var timerText:TextField;
+	
 	public var connect = Mysql.connect({ 
             host : "localhost",
             port : 3306,
@@ -50,7 +48,11 @@ class Main extends Sprite
 	
 	function init() 
 	{
-		questionTime = 2000;
+		stage.displayState = NORMAL;
+		gameMusic = FlxG.sound.load("assets/music/song.ogg");
+		gameMusic.play();
+		
+		questionTime = 1000;
 		lastUpdate = getTimer();
 		question  = new Question(this);
 		addChild(question);
@@ -58,8 +60,6 @@ class Main extends Sprite
 		checkAnswer  = new CheckAnswer(this, question);
 		question.createAnswer();
 		question.createQuestion();
-		gameMusic = sound.play();
-		gameMusic.soundTransform = new SoundTransform(0.3);
 		
 		stage.color = 0xffffff;
 		timerText = new TextField();
@@ -69,7 +69,7 @@ class Main extends Sprite
 		addEventListener(Event.ENTER_FRAME, update);
 	}
 	
-	function update(event:Event)
+	public function update(event:Event)
 	{
 		var currentTime:Int = Lib.getTimer();
 		var timePassed:Int  = currentTime - lastUpdate;
@@ -86,8 +86,8 @@ class Main extends Sprite
 				question.resetQuestion();
 				question.fillFields();
 				question.currentQuestion ++;
-			}else {
-				//sound.close();
+			}else 
+			{
 				gameMusic.stop();
 			}
 		}

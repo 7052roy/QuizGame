@@ -1,5 +1,6 @@
 package ;
 import openfl.display.Sprite;
+import openfl.system.System;
 import openfl.text.TextFormat;
 import openfl.text.TextField;
 import openfl.text.TextFormatAlign;
@@ -10,6 +11,9 @@ import openfl.media.Sound;
 import openfl.Assets;
 import openfl.display.Bitmap;
 import openfl.display.BitmapData;
+import motion.Actuate;
+import motion.easing.*;
+import openfl.events.Event;
 
 /**
  * ...
@@ -70,6 +74,8 @@ class Question extends Sprite
 		questionDb = main.connect.request("SELECT * FROM question WHERE Question_ID =" + currentQuestion );
 		var answerDb = main.connect.request("SELECT * FROM answer WHERE Question_ID =" + currentQuestion );
 		
+		
+		
 		for (row in questionDb) 
 		{
 			questionText.text = row.Question ;
@@ -78,25 +84,25 @@ class Question extends Sprite
 			var scale:Float = 0.1;
 			var bitmapData:BitmapData = Assets.getBitmapData("img/"+picture+".jpg");
 			image = new Bitmap( bitmapData );
-			//image.scaleX = scale;
-			//image.scaleY = scale;
 			image.x = 150;
 			image.y = 30;
-			image.width = 500;
-			image.height = 340;
+			image.width = 0;
+			image.height = 0;
 			addChild( image );
+			Actuate.tween (image, 2, { alpha: 1, width: 500, height: 340 } ).ease (Sine.easeIn);
+			
 		}
 		
 		for (row in answerDb) 
 		{
 			answerOptions[answerCount].text = row.PossibleAnswer;
 			answerCount ++;
-			//trace(row.PossibleAnswer);
 		}
 		
-		main.questionTime = 1000;
+		main.questionTime = 10000;
 		
 		main.lastUpdate = getTimer();
+		
 	}
 	
 	function onKeyPressed(event:KeyboardEvent):Void
@@ -114,7 +120,12 @@ class Question extends Sprite
 	
 	public function resetQuestion()
 	{
-		removeChild(image);
+		if (image != null)
+		{
+			removeChild(image);
+		}
+		
+		
 		answerCount = 0;
 	}
 	
