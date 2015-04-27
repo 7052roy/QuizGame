@@ -11,10 +11,12 @@ import openfl.display.BitmapData;
  */
 class MainMenu extends Sprite 
 {
+	var main:Main;
 
-	public function new() 
+	public function new(reference) 
 	{
 		super();
+		main = reference;
 	}
 	
 	public function create()
@@ -24,8 +26,8 @@ class MainMenu extends Sprite
 	
 	function Background()
 	{
-		var bitmapData:BitmapData = Assets.getBitmapData("img/coasternews quiz.jpg");
-		mainMenuBackground = new Bitmap( bitmapData );
+		var bitmapData:BitmapData = Assets.getBitmapData("img/coasternews quiz2.jpg");
+		var mainMenuBackground = new Bitmap( bitmapData );
 		addChild(mainMenuBackground);
 	}
 	

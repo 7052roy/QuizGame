@@ -57,6 +57,8 @@ class DefaultAssetLibrary extends AssetLibrary {
 		type.set ("img/Boomerang.jpg", AssetType.IMAGE);
 		path.set ("img/coasternews quiz.jpg", "img/coasternews quiz.jpg");
 		type.set ("img/coasternews quiz.jpg", AssetType.IMAGE);
+		path.set ("img/coasternews quiz2.jpg", "img/coasternews quiz2.jpg");
+		type.set ("img/coasternews quiz2.jpg", AssetType.IMAGE);
 		path.set ("img/Dominator.jpg", "img/Dominator.jpg");
 		type.set ("img/Dominator.jpg", AssetType.IMAGE);
 		path.set ("img/GateKeeper.jpg", "img/GateKeeper.jpg");
@@ -84,6 +86,9 @@ class DefaultAssetLibrary extends AssetLibrary {
 		path.set (id, id);
 		type.set (id, AssetType.IMAGE);
 		id = "img/coasternews quiz.jpg";
+		path.set (id, id);
+		type.set (id, AssetType.IMAGE);
+		id = "img/coasternews quiz2.jpg";
 		path.set (id, id);
 		type.set (id, AssetType.IMAGE);
 		id = "img/Dominator.jpg";
@@ -121,9 +126,11 @@ class DefaultAssetLibrary extends AssetLibrary {
 		
 		
 		
+		
 		#if (windows || mac || linux)
 		
 		var useManifest = false;
+		useManifest = true;
 		useManifest = true;
 		useManifest = true;
 		useManifest = true;
@@ -763,7 +770,9 @@ class DefaultAssetLibrary extends AssetLibrary {
 
 
 
+
 #elseif html5
+
 
 
 
@@ -855,6 +864,8 @@ class DefaultAssetLibrary extends AssetLibrary {
 		type.set ("img/Boomerang.jpg", AssetType.IMAGE);
 		path.set ("img/coasternews quiz.jpg", "img/coasternews quiz.jpg");
 		type.set ("img/coasternews quiz.jpg", AssetType.IMAGE);
+		path.set ("img/coasternews quiz2.jpg", "img/coasternews quiz2.jpg");
+		type.set ("img/coasternews quiz2.jpg", AssetType.IMAGE);
 		path.set ("img/Dominator.jpg", "img/Dominator.jpg");
 		type.set ("img/Dominator.jpg", AssetType.IMAGE);
 		path.set ("img/GateKeeper.jpg", "img/GateKeeper.jpg");
@@ -882,6 +893,9 @@ class DefaultAssetLibrary extends AssetLibrary {
 		path.set (id, id);
 		type.set (id, AssetType.IMAGE);
 		id = "img/coasternews quiz.jpg";
+		path.set (id, id);
+		type.set (id, AssetType.IMAGE);
+		id = "img/coasternews quiz2.jpg";
 		path.set (id, id);
 		type.set (id, AssetType.IMAGE);
 		id = "img/Dominator.jpg";
@@ -926,11 +940,13 @@ class DefaultAssetLibrary extends AssetLibrary {
 		
 		
 		
+		
 		#end
 		
 		#if (windows || mac || linux)
 		
 		var useManifest = false;
+		useManifest = true;
 		useManifest = true;
 		useManifest = true;
 		useManifest = true;
@@ -1554,7 +1570,9 @@ class DefaultAssetLibrary extends AssetLibrary {
 
 
 
+
 #elseif html5
+
 
 
 

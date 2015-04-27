@@ -30,6 +30,7 @@ class Main extends Sprite
 	public var questionTime:Int = 10000;
 	public var lastUpdate:Int;
 	var timerText:TextField;
+	var mainMenu:MainMenu;
 	
 	public var connect = Mysql.connect({ 
             host : "localhost",
@@ -49,6 +50,13 @@ class Main extends Sprite
 	function init() 
 	{
 		stage.displayState = NORMAL;
+		mainMenu = new MainMenu(this);
+		addChild(mainMenu);
+		mainMenu.create();
+	}
+	
+	public function startGame()
+	{
 		gameMusic = FlxG.sound.load("assets/music/song.ogg");
 		gameMusic.play();
 		

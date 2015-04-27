@@ -24,6 +24,8 @@ class AssetData {
 			type.set ("img/Boomerang.jpg", Reflect.field (AssetType, "image".toUpperCase ()));
 			path.set ("img/coasternews quiz.jpg", "img/coasternews quiz.jpg");
 			type.set ("img/coasternews quiz.jpg", Reflect.field (AssetType, "image".toUpperCase ()));
+			path.set ("img/coasternews quiz2.jpg", "img/coasternews quiz2.jpg");
+			type.set ("img/coasternews quiz2.jpg", Reflect.field (AssetType, "image".toUpperCase ()));
 			path.set ("img/Dominator.jpg", "img/Dominator.jpg");
 			type.set ("img/Dominator.jpg", Reflect.field (AssetType, "image".toUpperCase ()));
 			path.set ("img/GateKeeper.jpg", "img/GateKeeper.jpg");
