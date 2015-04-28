@@ -38,7 +38,8 @@ class MainMenu extends Sprite
 	{
 		startButton = new Buttons();
 		startButton.startButton();
-		startButton.x = 500;
+		startButton.x = 650;
+		startButton.y = 300;
 		startButton.addEventListener( MouseEvent.CLICK, main.onClick );
 		addChild( startButton );
 	}

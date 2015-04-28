@@ -65,6 +65,7 @@ class Main extends Sprite
 	
 	public function onClick(event:MouseEvent)
 	{
+		removeChild(mainMenu);
 		var bitmapData:BitmapData = Assets.getBitmapData("img/coasternews quiz background.jpg");
 		var gameBackground = new Bitmap( bitmapData );
 		addChild(gameBackground);
