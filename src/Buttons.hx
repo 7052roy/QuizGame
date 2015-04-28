@@ -1,5 +1,6 @@
 package ;
 import openfl.display.Sprite;
+import openfl.display.Bitmap;
 
 /**
  * ...
@@ -15,7 +16,9 @@ class Buttons extends Sprite
 	
 	public function startButton()
 	{
-		
+		var buttonGraphic:openfl.display.BitmapData = Assets.getBitmapData( "img/start.png" );
+		var bitmap:openfl.display.Bitmap = new Bitmap( buttonGraphic );
+		addChild( bitmap );
 	}
 	
 	public function endButton()
