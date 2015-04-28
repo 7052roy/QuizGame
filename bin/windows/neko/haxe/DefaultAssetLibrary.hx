@@ -63,6 +63,8 @@ class DefaultAssetLibrary extends AssetLibrary {
 		type.set ("img/Dominator.jpg", AssetType.IMAGE);
 		path.set ("img/GateKeeper.jpg", "img/GateKeeper.jpg");
 		type.set ("img/GateKeeper.jpg", AssetType.IMAGE);
+		path.set ("img/start.png", "img/start.png");
+		type.set ("img/start.png", AssetType.IMAGE);
 		path.set ("img/Tornado.jpg", "img/Tornado.jpg");
 		type.set ("img/Tornado.jpg", AssetType.IMAGE);
 		path.set ("assets/music/play.mp3", "assets/music/play.mp3");
@@ -97,6 +99,9 @@ class DefaultAssetLibrary extends AssetLibrary {
 		id = "img/GateKeeper.jpg";
 		path.set (id, id);
 		type.set (id, AssetType.IMAGE);
+		id = "img/start.png";
+		path.set (id, id);
+		type.set (id, AssetType.IMAGE);
 		id = "img/Tornado.jpg";
 		path.set (id, id);
 		type.set (id, AssetType.IMAGE);
@@ -127,9 +132,11 @@ class DefaultAssetLibrary extends AssetLibrary {
 		
 		
 		
+		
 		#if (windows || mac || linux)
 		
 		var useManifest = false;
+		useManifest = true;
 		useManifest = true;
 		useManifest = true;
 		useManifest = true;
@@ -771,7 +778,9 @@ class DefaultAssetLibrary extends AssetLibrary {
 
 
 
+
 #elseif html5
+
 
 
 
@@ -870,6 +879,8 @@ class DefaultAssetLibrary extends AssetLibrary {
 		type.set ("img/Dominator.jpg", AssetType.IMAGE);
 		path.set ("img/GateKeeper.jpg", "img/GateKeeper.jpg");
 		type.set ("img/GateKeeper.jpg", AssetType.IMAGE);
+		path.set ("img/start.png", "img/start.png");
+		type.set ("img/start.png", AssetType.IMAGE);
 		path.set ("img/Tornado.jpg", "img/Tornado.jpg");
 		type.set ("img/Tornado.jpg", AssetType.IMAGE);
 		path.set ("assets/music/play.mp3", "assets/music/play.mp3");
@@ -902,6 +913,9 @@ class DefaultAssetLibrary extends AssetLibrary {
 		path.set (id, id);
 		type.set (id, AssetType.IMAGE);
 		id = "img/GateKeeper.jpg";
+		path.set (id, id);
+		type.set (id, AssetType.IMAGE);
+		id = "img/start.png";
 		path.set (id, id);
 		type.set (id, AssetType.IMAGE);
 		id = "img/Tornado.jpg";
@@ -941,11 +955,13 @@ class DefaultAssetLibrary extends AssetLibrary {
 		
 		
 		
+		
 		#end
 		
 		#if (windows || mac || linux)
 		
 		var useManifest = false;
+		useManifest = true;
 		useManifest = true;
 		useManifest = true;
 		useManifest = true;
@@ -1571,7 +1587,9 @@ class DefaultAssetLibrary extends AssetLibrary {
 
 
 
+
 #elseif html5
+
 
 
 

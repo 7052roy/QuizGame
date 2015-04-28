@@ -13,6 +13,9 @@ import sys.db.Mysql;
 import openfl.Assets;
 import flixel.system.FlxSound;
 import flixel.FlxG;
+import openfl.events.MouseEvent;
+import openfl.display.Bitmap;
+import openfl.display.BitmapData;
 
 
 /**
@@ -31,6 +34,7 @@ class Main extends Sprite
 	public var lastUpdate:Int;
 	var timerText:TextField;
 	var mainMenu:MainMenu;
+	var startButton:Buttons;
 	
 	public var connect = Mysql.connect({ 
             host : "localhost",
@@ -53,6 +57,18 @@ class Main extends Sprite
 		mainMenu = new MainMenu(this);
 		addChild(mainMenu);
 		mainMenu.create();
+		//startButton = new Buttons(this);
+		//addChild(startButton);
+		
+		
+	}
+	
+	public function onClick(event:MouseEvent)
+	{
+		var bitmapData:BitmapData = Assets.getBitmapData("img/coasternews quiz background.jpg");
+		var gameBackground = new Bitmap( bitmapData );
+		addChild(gameBackground);
+		startGame();
 	}
 	
 	public function startGame()
