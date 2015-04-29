@@ -40,4 +40,12 @@ class Buttons extends Sprite
 		buttonMode = true;
 	}
 	
+	public function submitButton()
+	{
+		var buttonGraphic:openfl.display.BitmapData = Assets.getBitmapData( "img/start.png" );
+		var bitmap:openfl.display.Bitmap = new Bitmap( buttonGraphic );
+		addChild( bitmap );
+		buttonMode = true;
+	}
+	
 }

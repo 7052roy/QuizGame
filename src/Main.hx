@@ -71,12 +71,11 @@ class Main extends Sprite
 		var bitmapData:BitmapData = Assets.getBitmapData("img/coasternews quiz background.jpg");
 		gameBackground = new Bitmap( bitmapData );
 		addChild(gameBackground);
-		//startGame();
 		
 		gameMusic = FlxG.sound.load("assets/music/song.ogg");
 		gameMusic.play();
 		
-		questionTime = 1000;
+		questionTime = 1;
 		lastUpdate = getTimer();
 		question  = new Question(this);
 		addChild(question);
@@ -111,21 +110,18 @@ class Main extends Sprite
 		lastUpdate = currentTime;
 		
 		questionTime -= timePassed;
-		//timerText.text = questionTime + "";
+		timerText.text = questionTime + "";
 		
 		if (questionTime < 0)
 		{
-			if (question.currentQuestion < 5)
+			if (question.currentQuestion < 2)
 			{
 				question.resetQuestion();
 				question.fillFields();
 				question.currentQuestion ++;
 			}
-			if (question.currentQuestion == 5) {
-				question.currentQuestion ++;
-				gameMusic.stop();
-				removeEventListener(Event.ENTER_FRAME, update);
-				trace("open");
+			if (question.currentQuestion == 2)
+			{
 				removeGame();
 			}
 		}
@@ -133,11 +129,11 @@ class Main extends Sprite
 	
 	public function removeGame()
 	{
-		
-		//gameMusic.stop();
-		//trace("test2");
+		gameMusic.stop();
+		removeEventListener(Event.ENTER_FRAME, update);
 		removeChild(question);
 		removeChild(gameBackground);
+		removeChild(timerText);
 		endScreen.create();
 	}
 	/* SETUP */

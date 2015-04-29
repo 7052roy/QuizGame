@@ -8,7 +8,7 @@ class CheckAnswer
 {
 	var main:Main;
 	var question:Question;
-	var score:Int = 0;
+	public var score:Int = 0;
 
 	public function new(reference, question1) 
 	{

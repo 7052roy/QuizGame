@@ -6,17 +6,16 @@ package ;
  */
 class HighScores
 {
-	var name:String;
-	var score:Int;
+	var main:Main;
 
-	public function new() 
+	public function new(reference) 
 	{
-		
+		main = reference;
 	}
 	
-	function insert()
+	public function insert(name:String, score:Int)
 	{
-		insertHighScore = main.connect.request("INSERT INTO `quizgame`.`highscores` (`HighScore_ID`, `Name`, `Score`) VALUES (NULL," +name "," +score")");
+		main.connect.request("INSERT INTO `quizgame`.`highscores` (`HighScore_ID`, `Name`, `Score`) VALUES (NULL,'" +name+ "'," +score+ ")");
 	}
 	
 	public function getScore()
