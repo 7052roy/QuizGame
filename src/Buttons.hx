@@ -24,14 +24,20 @@ class Buttons extends Sprite
 		buttonMode = true;
 	}
 	
-	public function endButton()
+	public function exitButton()
 	{
-		
+		var buttonGraphic:openfl.display.BitmapData = Assets.getBitmapData( "img/exit.png" );
+		var bitmap:openfl.display.Bitmap = new Bitmap( buttonGraphic );
+		addChild( bitmap );
+		buttonMode = true;
 	}
 	
 	public function highScoreButton()
 	{
-		
+		var buttonGraphic:openfl.display.BitmapData = Assets.getBitmapData( "img/Scores.png" );
+		var bitmap:openfl.display.Bitmap = new Bitmap( buttonGraphic );
+		addChild( bitmap );
+		buttonMode = true;
 	}
 	
 }

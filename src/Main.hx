@@ -16,6 +16,7 @@ import flixel.FlxG;
 import openfl.events.MouseEvent;
 import openfl.display.Bitmap;
 import openfl.display.BitmapData;
+import openfl.system.System;
 
 
 /**
@@ -56,24 +57,17 @@ class Main extends Sprite
 		stage.displayState = NORMAL;
 		mainMenu = new MainMenu(this);
 		addChild(mainMenu);
-		mainMenu.create();
-		//startButton = new Buttons(this);
-		//addChild(startButton);
-		
-		
+		mainMenu.create();		
 	}
 	
-	public function onClick(event:MouseEvent)
+	public function startGame(event:MouseEvent)
 	{
 		removeChild(mainMenu);
 		var bitmapData:BitmapData = Assets.getBitmapData("img/coasternews quiz background.jpg");
 		var gameBackground = new Bitmap( bitmapData );
 		addChild(gameBackground);
-		startGame();
-	}
-	
-	public function startGame()
-	{
+		//startGame();
+		
 		gameMusic = FlxG.sound.load("assets/music/song.ogg");
 		gameMusic.play();
 		
@@ -92,6 +86,16 @@ class Main extends Sprite
 		addChild(timerText);
 		
 		addEventListener(Event.ENTER_FRAME, update);
+	}
+	
+	public function endGame(event:MouseEvent)
+	{
+		System.exit();
+	}
+	
+	public function highScores(event:MouseEvent)
+	{
+		
 	}
 	
 	public function update(event:Event)
