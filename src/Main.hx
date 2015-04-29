@@ -36,6 +36,8 @@ class Main extends Sprite
 	var timerText:TextField;
 	var mainMenu:MainMenu;
 	var startButton:Buttons;
+	public var endScreen:EndScreen;
+	var gameBackground:Bitmap;
 	
 	public var connect = Mysql.connect({ 
             host : "localhost",
@@ -57,14 +59,17 @@ class Main extends Sprite
 		stage.displayState = NORMAL;
 		mainMenu = new MainMenu(this);
 		addChild(mainMenu);
-		mainMenu.create();		
+		endScreen = new EndScreen(this);
+		addChild(endScreen);
+		mainMenu.create();	
+		
 	}
 	
 	public function startGame(event:MouseEvent)
 	{
 		removeChild(mainMenu);
 		var bitmapData:BitmapData = Assets.getBitmapData("img/coasternews quiz background.jpg");
-		var gameBackground = new Bitmap( bitmapData );
+		gameBackground = new Bitmap( bitmapData );
 		addChild(gameBackground);
 		//startGame();
 		
@@ -115,11 +120,25 @@ class Main extends Sprite
 				question.resetQuestion();
 				question.fillFields();
 				question.currentQuestion ++;
-			}else 
-			{
+			}
+			if (question.currentQuestion == 5) {
+				question.currentQuestion ++;
 				gameMusic.stop();
+				removeEventListener(Event.ENTER_FRAME, update);
+				trace("open");
+				removeGame();
 			}
 		}
+	}
+	
+	public function removeGame()
+	{
+		
+		//gameMusic.stop();
+		//trace("test2");
+		removeChild(question);
+		removeChild(gameBackground);
+		endScreen.create();
 	}
 	/* SETUP */
 

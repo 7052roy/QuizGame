@@ -31,6 +31,7 @@ class Question extends Sprite
 	public var currentQuestion:Int = 1;
 	var questionDb = null;
 	var answerCount:Int = 0;
+	var endScreen:EndScreen;
 
 	public function new(reference) 
 	{
@@ -123,6 +124,12 @@ class Question extends Sprite
 		if (image != null)
 		{
 			removeChild(image);
+			
+			trace(currentQuestion);
+		}
+		if(currentQuestion > 4)
+		{
+			main.removeGame();
 		}
 		
 		

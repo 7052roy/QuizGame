@@ -31,4 +31,9 @@ class CheckAnswer
 		}
 	}
 	
+	public function endScore()
+	{
+		
+	}
+	
 }

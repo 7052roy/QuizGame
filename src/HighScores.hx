@@ -19,4 +19,9 @@ class HighScores
 		insertHighScore = main.connect.request("INSERT INTO `quizgame`.`highscores` (`HighScore_ID`, `Name`, `Score`) VALUES (NULL," +name "," +score")");
 	}
 	
+	public function getScore()
+	{
+		
+	}
+	
 }
