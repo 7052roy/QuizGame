@@ -38,6 +38,7 @@ class Main extends Sprite
 	var startButton:Buttons;
 	public var endScreen:EndScreen;
 	var gameBackground:Bitmap;
+	var highScore:HighScores;
 	
 	public var connect = Mysql.connect({ 
             host : "localhost",
@@ -57,6 +58,9 @@ class Main extends Sprite
 	function init() 
 	{
 		stage.displayState = NORMAL;
+		stage.color = 0xFF0000;
+		highScore = new HighScores(this);
+		addChild(highScore);
 		mainMenu = new MainMenu(this);
 		addChild(mainMenu);
 		endScreen = new EndScreen(this);
@@ -99,7 +103,8 @@ class Main extends Sprite
 	
 	public function highScores(event:MouseEvent)
 	{
-		
+		removeChild(mainMenu);
+		highScore.viewScores();
 	}
 	
 	public function update(event:Event)
@@ -114,13 +119,13 @@ class Main extends Sprite
 		
 		if (questionTime < 0)
 		{
-			if (question.currentQuestion < 2)
+			if (question.currentQuestion < 6)
 			{
 				question.resetQuestion();
 				question.fillFields();
 				question.currentQuestion ++;
 			}
-			if (question.currentQuestion == 2)
+			if (question.currentQuestion == 6)
 			{
 				removeGame();
 			}
@@ -135,6 +140,13 @@ class Main extends Sprite
 		removeChild(gameBackground);
 		removeChild(timerText);
 		endScreen.create();
+	}
+	
+	public function resetEnd()
+	{
+		trace("test");
+		removeChild(endScreen);
+		highScore.viewScores();
 	}
 	/* SETUP */
 

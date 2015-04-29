@@ -87,10 +87,10 @@ class Question extends Sprite
 			image = new Bitmap( bitmapData );
 			image.x = 150;
 			image.y = 30;
-			image.width = 0;
-			image.height = 0;
+			image.width = 500;
+			image.height = 340;
 			addChild( image );
-			Actuate.tween (image, 2, { alpha: 1, width: 500, height: 340 } ).ease (Sine.easeIn);
+			//Actuate.tween (image, 2, { alpha: 1, width: 500, height: 340 } ).ease (Sine.easeIn);
 			
 		}
 		

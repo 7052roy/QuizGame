@@ -82,6 +82,11 @@ class EndScreen extends Sprite
 		}else {
 			trace(playerName.text);
 			insertScore.insert(playerName.text, main.checkAnswer.score);
+			removeChild(scoreText);
+			removeChild(playerName);
+			removeChild(submitButton);
+			
+			main.resetEnd();
 		}
 	}
 	
