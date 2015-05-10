@@ -38,6 +38,7 @@ class Main extends Sprite
 	var startButton:Buttons;
 	public var endScreen:EndScreen;
 	var gameBackground:Bitmap;
+	var gameInfo:Bitmap;
 	var highScore:HighScores;
 	
 	public var connect = Mysql.connect({ 
@@ -69,9 +70,28 @@ class Main extends Sprite
 		
 	}
 	
-	public function startGame(event:MouseEvent)
+	public function startScreen(event:MouseEvent)
 	{
 		removeChild(mainMenu);
+		
+		var bitmapData:BitmapData = Assets.getBitmapData("img/coasternews quiz info.jpg");
+		gameInfo = new Bitmap( bitmapData );
+		addChild(gameInfo);
+		
+		startButton = new Buttons();
+		startButton.startButton();
+		startButton.x = 550;
+		startButton.y = 400;
+		startButton.addEventListener( MouseEvent.CLICK, startGame );
+		addChild( startButton );
+		
+	}
+	
+	public function startGame(event:MouseEvent)
+	{
+		removeChild(startButton);
+		removeChild(gameInfo);
+		
 		var bitmapData:BitmapData = Assets.getBitmapData("img/coasternews quiz background.jpg");
 		gameBackground = new Bitmap( bitmapData );
 		addChild(gameBackground);

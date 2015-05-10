@@ -44,7 +44,7 @@ class MainMenu extends Sprite
 		startButton.startButton();
 		startButton.x = 550;
 		startButton.y = 250;
-		startButton.addEventListener( MouseEvent.CLICK, main.startGame );
+		startButton.addEventListener( MouseEvent.CLICK, main.startScreen );
 		addChild( startButton );
 	}
 	
@@ -66,6 +66,16 @@ class MainMenu extends Sprite
 		exitButton.y = 350;
 		exitButton.addEventListener( MouseEvent.CLICK, main.endGame );
 		addChild( exitButton );
+	}
+	
+	public function buttonStartGame()
+	{
+		startButton = new Buttons();
+		startButton.startButton();
+		startButton.x = 550;
+		startButton.y = 400;
+		startButton.addEventListener( MouseEvent.CLICK, main.startGame );
+		addChild( startButton );
 	}
 	
 }

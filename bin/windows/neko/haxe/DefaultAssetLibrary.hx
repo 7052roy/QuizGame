@@ -57,6 +57,8 @@ class DefaultAssetLibrary extends AssetLibrary {
 		type.set ("img/Boomerang.jpg", AssetType.IMAGE);
 		path.set ("img/coasternews quiz background.jpg", "img/coasternews quiz background.jpg");
 		type.set ("img/coasternews quiz background.jpg", AssetType.IMAGE);
+		path.set ("img/coasternews quiz info.jpg", "img/coasternews quiz info.jpg");
+		type.set ("img/coasternews quiz info.jpg", AssetType.IMAGE);
 		path.set ("img/coasternews quiz.jpg", "img/coasternews quiz.jpg");
 		type.set ("img/coasternews quiz.jpg", AssetType.IMAGE);
 		path.set ("img/coasternews quiz2.jpg", "img/coasternews quiz2.jpg");
@@ -94,6 +96,9 @@ class DefaultAssetLibrary extends AssetLibrary {
 		path.set (id, id);
 		type.set (id, AssetType.IMAGE);
 		id = "img/coasternews quiz background.jpg";
+		path.set (id, id);
+		type.set (id, AssetType.IMAGE);
+		id = "img/coasternews quiz info.jpg";
 		path.set (id, id);
 		type.set (id, AssetType.IMAGE);
 		id = "img/coasternews quiz.jpg";
@@ -151,9 +156,11 @@ class DefaultAssetLibrary extends AssetLibrary {
 		
 		
 		
+		
 		#if (windows || mac || linux)
 		
 		var useManifest = false;
+		useManifest = true;
 		useManifest = true;
 		useManifest = true;
 		useManifest = true;
@@ -803,7 +810,9 @@ class DefaultAssetLibrary extends AssetLibrary {
 
 
 
+
 #elseif html5
+
 
 
 
@@ -900,6 +909,8 @@ class DefaultAssetLibrary extends AssetLibrary {
 		type.set ("img/Boomerang.jpg", AssetType.IMAGE);
 		path.set ("img/coasternews quiz background.jpg", "img/coasternews quiz background.jpg");
 		type.set ("img/coasternews quiz background.jpg", AssetType.IMAGE);
+		path.set ("img/coasternews quiz info.jpg", "img/coasternews quiz info.jpg");
+		type.set ("img/coasternews quiz info.jpg", AssetType.IMAGE);
 		path.set ("img/coasternews quiz.jpg", "img/coasternews quiz.jpg");
 		type.set ("img/coasternews quiz.jpg", AssetType.IMAGE);
 		path.set ("img/coasternews quiz2.jpg", "img/coasternews quiz2.jpg");
@@ -937,6 +948,9 @@ class DefaultAssetLibrary extends AssetLibrary {
 		path.set (id, id);
 		type.set (id, AssetType.IMAGE);
 		id = "img/coasternews quiz background.jpg";
+		path.set (id, id);
+		type.set (id, AssetType.IMAGE);
+		id = "img/coasternews quiz info.jpg";
 		path.set (id, id);
 		type.set (id, AssetType.IMAGE);
 		id = "img/coasternews quiz.jpg";
@@ -1001,11 +1015,13 @@ class DefaultAssetLibrary extends AssetLibrary {
 		
 		
 		
+		
 		#end
 		
 		#if (windows || mac || linux)
 		
 		var useManifest = false;
+		useManifest = true;
 		useManifest = true;
 		useManifest = true;
 		useManifest = true;
@@ -1639,7 +1655,9 @@ class DefaultAssetLibrary extends AssetLibrary {
 
 
 
+
 #elseif html5
+
 
 
 
