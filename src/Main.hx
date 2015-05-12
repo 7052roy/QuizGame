@@ -61,8 +61,8 @@ class Main extends Sprite
 		stage.displayState = NORMAL;
 		stage.color = 0xFF0000;
 		highScore = new HighScores(this);
-		highScore.create();
-		addChild(highScore);
+		//highScore.create();
+		//addChild(highScore);
 		mainMenu = new MainMenu(this);
 		addChild(mainMenu);
 		endScreen = new EndScreen(this);
@@ -132,7 +132,7 @@ class Main extends Sprite
 	public function highScores(event:MouseEvent)
 	{
 		removeChild(mainMenu);
-		
+		highScore.create();
 		addChild(highScore);
 	}
 	
@@ -148,13 +148,13 @@ class Main extends Sprite
 		
 		if (questionTime < 0)
 		{
-			if (question.currentQuestion < 6)
+			if (question.currentQuestion < 8)
 			{
 				question.resetQuestion();
 				question.fillFields();
 				question.currentQuestion ++;
 			}
-			if (question.currentQuestion == 6)
+			if (question.currentQuestion == 8)
 			{
 				removeGame();
 			}
@@ -173,10 +173,10 @@ class Main extends Sprite
 	
 	public function resetEnd()
 	{
-		trace("test");
 		removeChild(endScreen);
-		addChild(highScore);
 		highScore.create();
+		addChild(highScore);
+		
 	}
 	/* SETUP */
 

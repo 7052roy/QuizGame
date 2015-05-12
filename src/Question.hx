@@ -124,10 +124,8 @@ class Question extends Sprite
 		if (image != null)
 		{
 			removeChild(image);
-			
-			trace(currentQuestion);
 		}
-		if(currentQuestion > 4)
+		if(currentQuestion > 2)
 		{
 			main.removeGame();
 		}

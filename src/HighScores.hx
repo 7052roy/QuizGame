@@ -28,10 +28,24 @@ class HighScores extends Sprite
 	{
 		main = reference;
 		super();
+		background();
+	}
+	
+	public function background()
+	{
+		var bitmapData:BitmapData = Assets.getBitmapData("img/coasternews quiz2.jpg");
+		var HighScoreBackground = new Bitmap( bitmapData );
+		addChild(HighScoreBackground);
 	}
 	
 	public function create()
 	{
+		for (i in endScores)
+		{
+			endScores.pop();
+		}
+		scoreCount = 0;
+		//endScores = [];
 		viewScores();
 		addButtons();
 	}
@@ -43,6 +57,7 @@ class HighScores extends Sprite
 	
 	function createScoreField()
 	{
+		
 		for ( i in 0...10)
 		{
 			scoreText = new TextField();
@@ -57,10 +72,7 @@ class HighScores extends Sprite
 	}
 	
 	public function viewScores()
-	{
-		var bitmapData:BitmapData = Assets.getBitmapData("img/coasternews quiz2.jpg");
-		var HighScoreBackground = new Bitmap( bitmapData );
-		addChild(HighScoreBackground);
+	{	
 		
 		createScoreField();
 		scores = main.connect.request("SELECT * FROM highscores ORDER BY Score DESC");
