@@ -46,12 +46,22 @@ class AssetData {
 			type.set ("img/start.png", Reflect.field (AssetType, "image".toUpperCase ()));
 			path.set ("img/Tornado.jpg", "img/Tornado.jpg");
 			type.set ("img/Tornado.jpg", Reflect.field (AssetType, "image".toUpperCase ()));
-			path.set ("assets/music/play.mp3", "assets/music/play.mp3");
-			type.set ("assets/music/play.mp3", Reflect.field (AssetType, "music".toUpperCase ()));
-			path.set ("assets/music/play.wav", "assets/music/play.wav");
-			type.set ("assets/music/play.wav", Reflect.field (AssetType, "music".toUpperCase ()));
-			path.set ("assets/music/song.ogg", "assets/music/song.ogg");
-			type.set ("assets/music/song.ogg", Reflect.field (AssetType, "music".toUpperCase ()));
+			path.set ("assets/music/gamemusic1.ogg", "assets/music/gamemusic1.ogg");
+			type.set ("assets/music/gamemusic1.ogg", Reflect.field (AssetType, "music".toUpperCase ()));
+			path.set ("assets/music/gamemusic2.ogg", "assets/music/gamemusic2.ogg");
+			type.set ("assets/music/gamemusic2.ogg", Reflect.field (AssetType, "music".toUpperCase ()));
+			path.set ("assets/music/gamemusic3.ogg", "assets/music/gamemusic3.ogg");
+			type.set ("assets/music/gamemusic3.ogg", Reflect.field (AssetType, "music".toUpperCase ()));
+			path.set ("assets/music/menuMusic1.ogg", "assets/music/menuMusic1.ogg");
+			type.set ("assets/music/menuMusic1.ogg", Reflect.field (AssetType, "music".toUpperCase ()));
+			path.set ("assets/music/menuMusic2.ogg", "assets/music/menuMusic2.ogg");
+			type.set ("assets/music/menuMusic2.ogg", Reflect.field (AssetType, "music".toUpperCase ()));
+			path.set ("assets/music/menuMusic3.ogg", "assets/music/menuMusic3.ogg");
+			type.set ("assets/music/menuMusic3.ogg", Reflect.field (AssetType, "music".toUpperCase ()));
+			path.set ("assets/music/scoreMusic1.ogg", "assets/music/scoreMusic1.ogg");
+			type.set ("assets/music/scoreMusic1.ogg", Reflect.field (AssetType, "music".toUpperCase ()));
+			path.set ("assets/music/scoreMusic2.ogg", "assets/music/scoreMusic2.ogg");
+			type.set ("assets/music/scoreMusic2.ogg", Reflect.field (AssetType, "music".toUpperCase ()));
 			
 			
 			initialized = true;

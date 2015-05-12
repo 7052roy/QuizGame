@@ -79,12 +79,22 @@ class DefaultAssetLibrary extends AssetLibrary {
 		type.set ("img/start.png", AssetType.IMAGE);
 		path.set ("img/Tornado.jpg", "img/Tornado.jpg");
 		type.set ("img/Tornado.jpg", AssetType.IMAGE);
-		path.set ("assets/music/play.mp3", "assets/music/play.mp3");
-		type.set ("assets/music/play.mp3", AssetType.MUSIC);
-		path.set ("assets/music/play.wav", "assets/music/play.wav");
-		type.set ("assets/music/play.wav", AssetType.MUSIC);
-		path.set ("assets/music/song.ogg", "assets/music/song.ogg");
-		type.set ("assets/music/song.ogg", AssetType.MUSIC);
+		path.set ("assets/music/gamemusic1.ogg", "assets/music/gamemusic1.ogg");
+		type.set ("assets/music/gamemusic1.ogg", AssetType.MUSIC);
+		path.set ("assets/music/gamemusic2.ogg", "assets/music/gamemusic2.ogg");
+		type.set ("assets/music/gamemusic2.ogg", AssetType.MUSIC);
+		path.set ("assets/music/gamemusic3.ogg", "assets/music/gamemusic3.ogg");
+		type.set ("assets/music/gamemusic3.ogg", AssetType.MUSIC);
+		path.set ("assets/music/menuMusic1.ogg", "assets/music/menuMusic1.ogg");
+		type.set ("assets/music/menuMusic1.ogg", AssetType.MUSIC);
+		path.set ("assets/music/menuMusic2.ogg", "assets/music/menuMusic2.ogg");
+		type.set ("assets/music/menuMusic2.ogg", AssetType.MUSIC);
+		path.set ("assets/music/menuMusic3.ogg", "assets/music/menuMusic3.ogg");
+		type.set ("assets/music/menuMusic3.ogg", AssetType.MUSIC);
+		path.set ("assets/music/scoreMusic1.ogg", "assets/music/scoreMusic1.ogg");
+		type.set ("assets/music/scoreMusic1.ogg", AssetType.MUSIC);
+		path.set ("assets/music/scoreMusic2.ogg", "assets/music/scoreMusic2.ogg");
+		type.set ("assets/music/scoreMusic2.ogg", AssetType.MUSIC);
 		
 		
 		#elseif html5
@@ -135,13 +145,28 @@ class DefaultAssetLibrary extends AssetLibrary {
 		id = "img/Tornado.jpg";
 		path.set (id, id);
 		type.set (id, AssetType.IMAGE);
-		id = "assets/music/play.mp3";
+		id = "assets/music/gamemusic1.ogg";
 		path.set (id, id);
 		type.set (id, AssetType.MUSIC);
-		id = "assets/music/play.wav";
+		id = "assets/music/gamemusic2.ogg";
 		path.set (id, id);
 		type.set (id, AssetType.MUSIC);
-		id = "assets/music/song.ogg";
+		id = "assets/music/gamemusic3.ogg";
+		path.set (id, id);
+		type.set (id, AssetType.MUSIC);
+		id = "assets/music/menuMusic1.ogg";
+		path.set (id, id);
+		type.set (id, AssetType.MUSIC);
+		id = "assets/music/menuMusic2.ogg";
+		path.set (id, id);
+		type.set (id, AssetType.MUSIC);
+		id = "assets/music/menuMusic3.ogg";
+		path.set (id, id);
+		type.set (id, AssetType.MUSIC);
+		id = "assets/music/scoreMusic1.ogg";
+		path.set (id, id);
+		type.set (id, AssetType.MUSIC);
+		id = "assets/music/scoreMusic2.ogg";
 		path.set (id, id);
 		type.set (id, AssetType.MUSIC);
 		
@@ -169,9 +194,19 @@ class DefaultAssetLibrary extends AssetLibrary {
 		
 		
 		
+		
+		
+		
+		
+		
 		#if (windows || mac || linux)
 		
 		var useManifest = false;
+		useManifest = true;
+		useManifest = true;
+		useManifest = true;
+		useManifest = true;
+		useManifest = true;
 		useManifest = true;
 		useManifest = true;
 		useManifest = true;
@@ -827,7 +862,17 @@ class DefaultAssetLibrary extends AssetLibrary {
 
 
 
+
+
+
+
+
 #elseif html5
+
+
+
+
+
 
 
 
@@ -949,12 +994,22 @@ class DefaultAssetLibrary extends AssetLibrary {
 		type.set ("img/start.png", AssetType.IMAGE);
 		path.set ("img/Tornado.jpg", "img/Tornado.jpg");
 		type.set ("img/Tornado.jpg", AssetType.IMAGE);
-		path.set ("assets/music/play.mp3", "assets/music/play.mp3");
-		type.set ("assets/music/play.mp3", AssetType.MUSIC);
-		path.set ("assets/music/play.wav", "assets/music/play.wav");
-		type.set ("assets/music/play.wav", AssetType.MUSIC);
-		path.set ("assets/music/song.ogg", "assets/music/song.ogg");
-		type.set ("assets/music/song.ogg", AssetType.MUSIC);
+		path.set ("assets/music/gamemusic1.ogg", "assets/music/gamemusic1.ogg");
+		type.set ("assets/music/gamemusic1.ogg", AssetType.MUSIC);
+		path.set ("assets/music/gamemusic2.ogg", "assets/music/gamemusic2.ogg");
+		type.set ("assets/music/gamemusic2.ogg", AssetType.MUSIC);
+		path.set ("assets/music/gamemusic3.ogg", "assets/music/gamemusic3.ogg");
+		type.set ("assets/music/gamemusic3.ogg", AssetType.MUSIC);
+		path.set ("assets/music/menuMusic1.ogg", "assets/music/menuMusic1.ogg");
+		type.set ("assets/music/menuMusic1.ogg", AssetType.MUSIC);
+		path.set ("assets/music/menuMusic2.ogg", "assets/music/menuMusic2.ogg");
+		type.set ("assets/music/menuMusic2.ogg", AssetType.MUSIC);
+		path.set ("assets/music/menuMusic3.ogg", "assets/music/menuMusic3.ogg");
+		type.set ("assets/music/menuMusic3.ogg", AssetType.MUSIC);
+		path.set ("assets/music/scoreMusic1.ogg", "assets/music/scoreMusic1.ogg");
+		type.set ("assets/music/scoreMusic1.ogg", AssetType.MUSIC);
+		path.set ("assets/music/scoreMusic2.ogg", "assets/music/scoreMusic2.ogg");
+		type.set ("assets/music/scoreMusic2.ogg", AssetType.MUSIC);
 		
 		
 		#elseif html5
@@ -1005,13 +1060,28 @@ class DefaultAssetLibrary extends AssetLibrary {
 		id = "img/Tornado.jpg";
 		path.set (id, id);
 		type.set (id, AssetType.IMAGE);
-		id = "assets/music/play.mp3";
+		id = "assets/music/gamemusic1.ogg";
 		path.set (id, id);
 		type.set (id, AssetType.MUSIC);
-		id = "assets/music/play.wav";
+		id = "assets/music/gamemusic2.ogg";
 		path.set (id, id);
 		type.set (id, AssetType.MUSIC);
-		id = "assets/music/song.ogg";
+		id = "assets/music/gamemusic3.ogg";
+		path.set (id, id);
+		type.set (id, AssetType.MUSIC);
+		id = "assets/music/menuMusic1.ogg";
+		path.set (id, id);
+		type.set (id, AssetType.MUSIC);
+		id = "assets/music/menuMusic2.ogg";
+		path.set (id, id);
+		type.set (id, AssetType.MUSIC);
+		id = "assets/music/menuMusic3.ogg";
+		path.set (id, id);
+		type.set (id, AssetType.MUSIC);
+		id = "assets/music/scoreMusic1.ogg";
+		path.set (id, id);
+		type.set (id, AssetType.MUSIC);
+		id = "assets/music/scoreMusic2.ogg";
 		path.set (id, id);
 		type.set (id, AssetType.MUSIC);
 		
@@ -1046,11 +1116,21 @@ class DefaultAssetLibrary extends AssetLibrary {
 		
 		
 		
+		
+		
+		
+		
+		
 		#end
 		
 		#if (windows || mac || linux)
 		
 		var useManifest = false;
+		useManifest = true;
+		useManifest = true;
+		useManifest = true;
+		useManifest = true;
+		useManifest = true;
 		useManifest = true;
 		useManifest = true;
 		useManifest = true;
@@ -1690,7 +1770,17 @@ class DefaultAssetLibrary extends AssetLibrary {
 
 
 
+
+
+
+
+
 #elseif html5
+
+
+
+
+
 
 
 

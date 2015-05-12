@@ -31,6 +31,8 @@ class Main extends Sprite
 	var question:Question;	
 	public var checkAnswer:CheckAnswer;
     var gameMusic:FlxSound;
+	var menuMusic:FlxSound;
+	var scoreMusic:FlxSound;
 	public var questionTime:Int = 10000;
 	public var lastUpdate:Int;
 	var timerText:TextField;
@@ -69,10 +71,17 @@ class Main extends Sprite
 		//addChild(checkAnswer);
 		addChild(endScreen);
 		mainMenu.create();
+		var songNumber = Std.random(3) + 1;
+		menuMusic = FlxG.sound.load("assets/music/menuMusic" +songNumber + ".ogg");
+		menuMusic.play();
+		trace(songNumber);
 	}
 	
 	public function create(event:MouseEvent)
 	{
+		var songNumber = Std.random(3) + 1;
+		menuMusic = FlxG.sound.load("assets/music/menuMusic" +songNumber + ".ogg");
+		menuMusic.play();
 		removeChild(highScore);
 		addChild(mainMenu);
 	}
@@ -96,14 +105,16 @@ class Main extends Sprite
 	
 	public function startGame(event:MouseEvent)
 	{
+		menuMusic.stop();
 		removeChild(startButton);
 		removeChild(gameInfo);
 		
 		var bitmapData:BitmapData = Assets.getBitmapData("img/coasternews quiz background.jpg");
 		gameBackground = new Bitmap( bitmapData );
 		addChild(gameBackground);
-		
-		gameMusic = FlxG.sound.load("assets/music/song.ogg");
+		var songNumber = Std.random(3) + 1;
+		gameMusic = FlxG.sound.load("assets/music/gamemusic" +songNumber + ".ogg");
+		trace(songNumber);
 		gameMusic.play();
 		
 		questionTime = 1;
@@ -131,6 +142,10 @@ class Main extends Sprite
 	
 	public function highScores(event:MouseEvent)
 	{
+		menuMusic.stop();
+		var songNumber = Std.random(2) + 1;
+		scoreMusic = FlxG.sound.load("assets/music/scoreMusic" +songNumber + ".ogg");
+		scoreMusic.play();
 		removeChild(mainMenu);
 		highScore.create();
 		addChild(highScore);
@@ -174,6 +189,9 @@ class Main extends Sprite
 	public function resetEnd()
 	{
 		removeChild(endScreen);
+		var songNumber = Std.random(2) + 1;
+		scoreMusic = FlxG.sound.load("assets/music/scoreMusic" +songNumber + ".ogg");
+		scoreMusic.play();
 		highScore.create();
 		addChild(highScore);
 		
