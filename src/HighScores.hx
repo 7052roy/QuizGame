@@ -6,6 +6,7 @@ import openfl.display.BitmapData;
 import openfl.Assets;
 import openfl.text.TextFormatAlign;
 import openfl.text.TextFormat;
+import openfl.events.MouseEvent;
 /**
  * ...
  * @author roy leinenga
@@ -17,14 +18,22 @@ class HighScores extends Sprite
 	var scoreText:TextField = new TextField();
 	var scoreName:String;
 	var endScores:Array<TextField> = new Array<TextField>();
-	var scoreCount = 0;
-	var scoreTextFormat:TextFormat = new TextFormat("Arial", 28, 0x000000, false, false, false, null, null,TextFormatAlign.RIGHT);
+	public var scoreCount = 0;
+	var scoreTextFormat:TextFormat = new TextFormat("Arial", 28, 0x000000, false, false, false, null, null, TextFormatAlign.RIGHT);
+	var exitButton:Buttons;
+	var startButton:Buttons;
+	var mainMenuButton:Buttons;
 
 	public function new(reference) 
 	{
 		main = reference;
 		super();
-		
+	}
+	
+	public function create()
+	{
+		viewScores();
+		addButtons();
 	}
 	
 	public function insert(name:String, score:Int)
@@ -32,16 +41,11 @@ class HighScores extends Sprite
 		main.connect.request("INSERT INTO `quizgame`.`highscores` (`HighScore_ID`, `Name`, `Score`) VALUES (NULL,'" +name+ "'," +score+ ")");
 	}
 	
-	public function getScore()
-	{
-		
-	}
-	
-	public function createScoreField()
+	function createScoreField()
 	{
 		for ( i in 0...10)
 		{
-			var scoreText:TextField = new TextField();
+			scoreText = new TextField();
 			scoreText.defaultTextFormat = scoreTextFormat;
 			scoreText.x = 0;
 			scoreText.y = 150 + 30 * i;
@@ -60,13 +64,38 @@ class HighScores extends Sprite
 		
 		createScoreField();
 		scores = main.connect.request("SELECT * FROM highscores ORDER BY Score DESC");
-		//main.resetEnd();
 		for (row in scores) 
 		{
-			scoreName = row.Name + " :" + row.Score;
+			scoreName = row.Name + ": " + row.Score;
 			endScores[scoreCount].text = scoreName;
 			scoreCount ++;
 		}
+		
+	}
+	
+	function addButtons()
+	{
+		addChild (scoreText);
+		exitButton = new Buttons();
+		exitButton.exitButton();
+		exitButton.x = 450;
+		exitButton.y = 350;
+		exitButton.addEventListener( MouseEvent.CLICK, main.endGame );
+		addChild( exitButton );
+		
+		startButton = new Buttons();
+		startButton.startButton();
+		startButton.x = 450;
+		startButton.y = 300;
+		startButton.addEventListener( MouseEvent.CLICK, main.startScreen );
+		addChild( startButton );
+		
+		mainMenuButton = new Buttons();
+		mainMenuButton.startButton();
+		mainMenuButton.x = 450;
+		mainMenuButton.y = 250;
+		mainMenuButton.addEventListener( MouseEvent.CLICK, main.create );
+		addChild( mainMenuButton );
 	}
 	
 }

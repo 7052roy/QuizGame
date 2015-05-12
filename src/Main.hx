@@ -34,7 +34,7 @@ class Main extends Sprite
 	public var questionTime:Int = 10000;
 	public var lastUpdate:Int;
 	var timerText:TextField;
-	var mainMenu:MainMenu;
+	public var mainMenu:MainMenu;
 	var startButton:Buttons;
 	public var endScreen:EndScreen;
 	var gameBackground:Bitmap;
@@ -61,27 +61,34 @@ class Main extends Sprite
 		stage.displayState = NORMAL;
 		stage.color = 0xFF0000;
 		highScore = new HighScores(this);
+		highScore.create();
 		addChild(highScore);
 		mainMenu = new MainMenu(this);
 		addChild(mainMenu);
 		endScreen = new EndScreen(this);
+		//addChild(checkAnswer);
 		addChild(endScreen);
-		mainMenu.create();	
-		
+		mainMenu.create();
+	}
+	
+	public function create(event:MouseEvent)
+	{
+		removeChild(highScore);
+		addChild(mainMenu);
 	}
 	
 	public function startScreen(event:MouseEvent)
 	{
 		removeChild(mainMenu);
-		
+		highScore.scoreCount = 0;
 		var bitmapData:BitmapData = Assets.getBitmapData("img/coasternews quiz info.jpg");
 		gameInfo = new Bitmap( bitmapData );
 		addChild(gameInfo);
 		
 		startButton = new Buttons();
 		startButton.startButton();
-		startButton.x = 550;
-		startButton.y = 400;
+		startButton.x = 600;
+		startButton.y = 450;
 		startButton.addEventListener( MouseEvent.CLICK, startGame );
 		addChild( startButton );
 		
@@ -105,6 +112,7 @@ class Main extends Sprite
 		addChild(question);
 		
 		checkAnswer  = new CheckAnswer(this, question);
+		addChild(checkAnswer);
 		question.createAnswer();
 		question.createQuestion();
 		
@@ -124,7 +132,8 @@ class Main extends Sprite
 	public function highScores(event:MouseEvent)
 	{
 		removeChild(mainMenu);
-		highScore.viewScores();
+		
+		addChild(highScore);
 	}
 	
 	public function update(event:Event)
@@ -166,7 +175,8 @@ class Main extends Sprite
 	{
 		trace("test");
 		removeChild(endScreen);
-		highScore.viewScores();
+		addChild(highScore);
+		highScore.create();
 	}
 	/* SETUP */
 
