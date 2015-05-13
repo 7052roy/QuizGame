@@ -8,7 +8,8 @@ import openfl.text.TextFormatAlign;
 import openfl.text.TextFormat;
 import openfl.events.MouseEvent;
 /**
- * ...
+ * This class creates the highscore screen.
+ * 
  * @author roy leinenga
  */
 class HighScores extends Sprite
@@ -31,6 +32,9 @@ class HighScores extends Sprite
 		background();
 	}
 	
+	/**
+	 * This function creates the backGround for the highscore screen
+	 */
 	public function background()
 	{
 		var bitmapData:BitmapData = Assets.getBitmapData("img/coasternews quiz2.jpg");
@@ -38,18 +42,26 @@ class HighScores extends Sprite
 		addChild(HighScoreBackground);
 	}
 	
+	/**
+	 * This function empties the array and calls the function to create the scores and the buttons
+	 */
 	public function create()
 	{
-		for (i in endScores)
+		while (endScores.length > 0)
 		{
 			endScores.pop();
 		}
 		scoreCount = 0;
-		//endScores = [];
 		viewScores();
 		addButtons();
 	}
 	
+	/**
+	 * This function adds the score to the database
+	 * 
+	 * @param	name
+	 * @param	score
+	 */
 	public function insert(name:String, score:Int)
 	{
 		main.connect.request("INSERT INTO `quizgame`.`highscores` (`HighScore_ID`, `Name`, `Score`) VALUES (NULL,'" +name+ "'," +score+ ")");
@@ -71,6 +83,9 @@ class HighScores extends Sprite
 		}
 	}
 	
+	/**
+	 * This function requests the scores from the database and shows the on the screen
+	 */
 	public function viewScores()
 	{	
 		
@@ -85,6 +100,9 @@ class HighScores extends Sprite
 		
 	}
 	
+	/**
+	 * This function adds the buttons to the highscore screen
+	 */
 	function addButtons()
 	{
 		addChild (scoreText);

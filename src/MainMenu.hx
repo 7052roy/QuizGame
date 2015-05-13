@@ -7,7 +7,8 @@ import openfl.display.BitmapData;
 import openfl.events.MouseEvent;
 
 /**
- * ...
+ * This class creates the mainMenu
+ * 
  * @author roy leinenga
  */
 class MainMenu extends Sprite 
@@ -23,6 +24,9 @@ class MainMenu extends Sprite
 		main = reference;
 	}
 	
+	/**
+	 * This funstion calls other functions to create the menu
+	 */
 	public function create()
 	{
 		background();
@@ -31,6 +35,9 @@ class MainMenu extends Sprite
 		endButton();
 	}
 	
+	/**
+	 * This function creates the background for the main menu
+	 */
 	function background()
 	{
 		var bitmapData:BitmapData = Assets.getBitmapData("img/coasternews quiz2.jpg");
@@ -38,6 +45,9 @@ class MainMenu extends Sprite
 		addChild(mainMenuBackground);
 	}
 	
+	/**
+	 * this function adds the button to go to the startScreen
+	 */
 	function buttonStart()
 	{
 		startButton = new Buttons();
@@ -48,6 +58,9 @@ class MainMenu extends Sprite
 		addChild( startButton );
 	}
 	
+	/**
+	 * This function adds the highScore button
+	 */
 	function highScoreButton()
 	{
 		scoreButton = new Buttons();
@@ -58,6 +71,9 @@ class MainMenu extends Sprite
 		addChild( scoreButton );
 	}
 	
+	/**
+	 * This function adds the endButton
+	 */
 	function endButton()
 	{
 		exitButton = new Buttons();
@@ -68,6 +84,9 @@ class MainMenu extends Sprite
 		addChild( exitButton );
 	}
 	
+	/**
+	 * This function adds the start button to start the actual game
+	 */
 	public function buttonStartGame()
 	{
 		startButton = new Buttons();

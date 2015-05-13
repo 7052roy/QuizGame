@@ -16,7 +16,8 @@ import motion.easing.*;
 import openfl.events.Event;
 
 /**
- * ...
+ * This class fetches the question and answers from the database and adds the to the screen
+ * 
  * @author roy leinenga
  */
 class Question extends Sprite
@@ -40,6 +41,9 @@ class Question extends Sprite
 		
 	}
 	
+	/**
+	 * this function creates the textfield for the question
+	 */
 	public function createQuestion()
 	{
 		questionText = new TextField();
@@ -54,6 +58,9 @@ class Question extends Sprite
 		stage.addEventListener(KeyboardEvent.KEY_DOWN, onKeyPressed);
 	}
 	
+	/**
+	 * This function creates the textfields for the possible answers
+	 */
 	public function createAnswer()
 	{
 		for ( i in 0...3)
@@ -69,6 +76,9 @@ class Question extends Sprite
 		}
 	}
 	
+	/**
+	 * This function fills the question and the answers and adds the corresponding picture to the screen
+	 */
 	public function fillFields()
 	{
 		
@@ -106,6 +116,11 @@ class Question extends Sprite
 		
 	}
 	
+	/**
+	 * This function checks if a key is pressed
+	 * 
+	 * @param	event
+	 */
 	function onKeyPressed(event:KeyboardEvent):Void
 	{		
 		switch(event.keyCode)
@@ -119,6 +134,9 @@ class Question extends Sprite
 		}
 	}
 	
+	/**
+	 * This function empties the textFields and removes the picture from the screen
+	 */
 	public function resetQuestion()
 	{
 		if (image != null)

@@ -5,7 +5,8 @@ import openfl.display.BitmapData;
 import openfl.Assets;
 
 /**
- * ...
+ * This class creates the buttons that will be used in the game
+ * 
  * @author roy leinenga
  */
 class Buttons extends Sprite
@@ -16,6 +17,9 @@ class Buttons extends Sprite
 		super();
 	}
 	
+	/**
+	 * This function draws the startButton
+	 */
 	public function startButton()
 	{
 		var buttonGraphic:openfl.display.BitmapData = Assets.getBitmapData( "img/start.png" );
@@ -24,6 +28,9 @@ class Buttons extends Sprite
 		buttonMode = true;
 	}
 	
+	/**
+	 * This function draws the exitButton
+	 */
 	public function exitButton()
 	{
 		var buttonGraphic:openfl.display.BitmapData = Assets.getBitmapData( "img/exit.png" );
@@ -32,6 +39,9 @@ class Buttons extends Sprite
 		buttonMode = true;
 	}
 	
+	/**
+	 * This function draws the highScoreButton
+	 */
 	public function highScoreButton()
 	{
 		var buttonGraphic:openfl.display.BitmapData = Assets.getBitmapData( "img/Scores.png" );
@@ -40,6 +50,9 @@ class Buttons extends Sprite
 		buttonMode = true;
 	}
 	
+	/**
+	 * This function creates the submitButton
+	 */
 	public function submitButton()
 	{
 		var buttonGraphic:openfl.display.BitmapData = Assets.getBitmapData( "img/Scores.png" );

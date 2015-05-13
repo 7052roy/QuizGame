@@ -22,6 +22,8 @@ import openfl.system.System;
 /**
  * ...
  * @author Roy Leinenga
+ * 
+ * This is a small Quizgame where people have to answer questions about rollercoasters.
  */
 
 class Main extends Sprite 
@@ -43,6 +45,7 @@ class Main extends Sprite
 	var gameInfo:Bitmap;
 	var highScore:HighScores;
 	
+	//This variable connects towards the database.
 	public var connect = Mysql.connect({ 
             host : "localhost",
             port : 3306,
@@ -58,6 +61,9 @@ class Main extends Sprite
 		// else (resize or orientation change)
 	}
 	
+	/**
+	 * This function initializes the start of the game.
+	 */
 	function init() 
 	{
 		stage.displayState = NORMAL;
@@ -74,11 +80,17 @@ class Main extends Sprite
 		var songNumber = Std.random(3) + 1;
 		menuMusic = FlxG.sound.load("assets/music/menuMusic" +songNumber + ".ogg");
 		menuMusic.play();
-		trace(songNumber);
 	}
 	
+	/**
+	 * This functions listens to a button in the HighScore class once the button is pressed it adds the mainMenu back to the stage.
+	 * And removes the highScore screen from the stage.
+	 * 
+	 * @param	event
+	 */
 	public function create(event:MouseEvent)
 	{
+		scoreMusic.stop();
 		var songNumber = Std.random(3) + 1;
 		menuMusic = FlxG.sound.load("assets/music/menuMusic" +songNumber + ".ogg");
 		menuMusic.play();
@@ -86,8 +98,15 @@ class Main extends Sprite
 		addChild(mainMenu);
 	}
 	
+	/**
+	 * This function creates the startScreen of the game which has a bit of explanation on how the game works.
+	 * It also removes the mainMenu from the stage and adds a button to start the actual game.
+	 * 
+	 * @param	event
+	 */
 	public function startScreen(event:MouseEvent)
 	{
+
 		removeChild(mainMenu);
 		highScore.scoreCount = 0;
 		var bitmapData:BitmapData = Assets.getBitmapData("img/coasternews quiz info.jpg");
@@ -103,8 +122,17 @@ class Main extends Sprite
 		
 	}
 	
+	/**
+	 * This function creates the actual game.
+	 * 
+	 * @param	event
+	 */
 	public function startGame(event:MouseEvent)
 	{
+		if (scoreMusic != null)
+		{
+			scoreMusic.stop();
+		}
 		menuMusic.stop();
 		removeChild(startButton);
 		removeChild(gameInfo);
@@ -135,6 +163,11 @@ class Main extends Sprite
 		addEventListener(Event.ENTER_FRAME, update);
 	}
 	
+	/**
+	 * This function closes the game
+	 * 
+	 * @param	event
+	 */
 	public function endGame(event:MouseEvent)
 	{
 		System.exit();
@@ -151,6 +184,11 @@ class Main extends Sprite
 		addChild(highScore);
 	}
 	
+	/**
+	 * This function is called every frame to update the timer and check if the timer hasn't ended
+	 * 
+	 * @param	event
+	 */
 	public function update(event:Event)
 	{
 		var currentTime:Int = Lib.getTimer();
@@ -163,22 +201,25 @@ class Main extends Sprite
 		
 		if (questionTime < 0)
 		{
-			if (question.currentQuestion < 8)
+			if (question.currentQuestion < 4)
 			{
 				question.resetQuestion();
 				question.fillFields();
 				question.currentQuestion ++;
 			}
-			if (question.currentQuestion == 8)
+			if (question.currentQuestion == 4)
 			{
 				removeGame();
 			}
 		}
 	}
 	
+	/**
+	 * This function removes the game from the screen and creates the end screen
+	 */
 	public function removeGame()
 	{
-		gameMusic.stop();
+		
 		removeEventListener(Event.ENTER_FRAME, update);
 		removeChild(question);
 		removeChild(gameBackground);
@@ -186,8 +227,12 @@ class Main extends Sprite
 		endScreen.create();
 	}
 	
+	/**
+	 * This function creates the endscore screen. And starts the highscore music.
+	 */
 	public function resetEnd()
 	{
+		gameMusic.stop();
 		removeChild(endScreen);
 		var songNumber = Std.random(2) + 1;
 		scoreMusic = FlxG.sound.load("assets/music/scoreMusic" +songNumber + ".ogg");

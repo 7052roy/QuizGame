@@ -11,7 +11,8 @@ import openfl.text.TextFormat;
 import openfl.text.TextFormatAlign;
 
 /**
- * ...
+ * This class creates the endscreen where players submit their score
+ * 
  * @author roy leinenga
  */
 class EndScreen extends Sprite
@@ -28,6 +29,9 @@ class EndScreen extends Sprite
 		main = reference;
 	}
 	
+	/**
+	 * This function calls other functions to create the endScreen
+	 */
 	public function create()
 	{
 		backGround();
@@ -36,6 +40,9 @@ class EndScreen extends Sprite
 		submit();
 	}
 	
+	/**
+	 * This function draws the background to the screen
+	 */
 	function backGround()
 	{
 		var bitmapData:BitmapData = Assets.getBitmapData("img/coasternews quiz2.jpg");
@@ -43,6 +50,9 @@ class EndScreen extends Sprite
 		addChild(mainMenuBackground);
 	}
 	
+	/**
+	 * this function creates a textfield where the players score is shown.
+	 */
 	function score()
 	{
 		scoreText = new TextField();
@@ -52,6 +62,9 @@ class EndScreen extends Sprite
 		addChild(scoreText);
 	}
 	
+	/**
+	 * This function creates a textfield where players can enter their name 
+	 */
 	function nameField()
 	{
 		playerName = new TextField();
@@ -63,6 +76,9 @@ class EndScreen extends Sprite
 		addChild(playerName);
 	}
 	
+	/**
+	 * This function creates the submitButton
+	 */
 	function submit()
 	{
 		submitButton = new Buttons();
@@ -73,6 +89,11 @@ class EndScreen extends Sprite
 		submitButton.addEventListener( MouseEvent.CLICK, submitScore );
 	}
 	
+	/**
+	 * This function checks if the name is filled calls a function to add the score to the database
+	 * 
+	 * @param	event
+	 */
 	function submitScore(event:Event)
 	{
 		var insertScore:HighScores = new HighScores(main);
