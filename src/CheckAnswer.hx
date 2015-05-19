@@ -50,7 +50,7 @@ class CheckAnswer extends Sprite
 		if (givenAnswer == question.correctAnswer)
 		{
 			score += main.questionTime;
-			score += 1000;
+			score += 3000;
 			main.questionTime = 1;
 			answerText.text = "Well done";
 		}else {

@@ -143,7 +143,7 @@ class Question extends Sprite
 		{
 			removeChild(image);
 		}
-		if(currentQuestion > 2)
+		if(currentQuestion > 6)
 		{
 			main.removeGame();
 		}

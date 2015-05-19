@@ -201,13 +201,13 @@ class Main extends Sprite
 		
 		if (questionTime < 0)
 		{
-			if (question.currentQuestion < 4)
+			if (question.currentQuestion < 8)
 			{
 				question.resetQuestion();
 				question.fillFields();
 				question.currentQuestion ++;
 			}
-			if (question.currentQuestion == 4)
+			if (question.currentQuestion == 8)
 			{
 				removeGame();
 			}
