@@ -69,17 +69,36 @@ class Main extends Sprite
 		stage.displayState = NORMAL;
 		stage.color = 0xFF0000;
 		highScore = new HighScores(this);
-		//highScore.create();
-		//addChild(highScore);
 		mainMenu = new MainMenu(this);
 		addChild(mainMenu);
 		endScreen = new EndScreen(this);
-		//addChild(checkAnswer);
-		addChild(endScreen);
+		
+		createGame();
 		mainMenu.create();
 		var songNumber = Std.random(3) + 1;
 		menuMusic = FlxG.sound.load("assets/music/menuMusic" +songNumber + ".ogg");
 		menuMusic.play();
+		
+	}
+	
+	function createGame()
+	{
+		var bitmapData:BitmapData = Assets.getBitmapData("img/coasternews quiz info.jpg");
+		gameInfo = new Bitmap( bitmapData );
+		
+		
+		var bitmapData2:BitmapData = Assets.getBitmapData("img/coasternews quiz background.jpg");
+		gameBackground = new Bitmap( bitmapData2 );
+		
+		question  = new Question(this);
+		checkAnswer  = new CheckAnswer(this, question);
+		
+		timerText = new TextField();
+		timerText.defaultTextFormat = question.questionTextFormat;
+		
+		//highScore.addButtons();
+		
+		endScreen.backGround();
 	}
 	
 	/**
@@ -106,20 +125,15 @@ class Main extends Sprite
 	 */
 	public function startScreen(event:MouseEvent)
 	{
-
 		removeChild(mainMenu);
 		highScore.scoreCount = 0;
-		var bitmapData:BitmapData = Assets.getBitmapData("img/coasternews quiz info.jpg");
-		gameInfo = new Bitmap( bitmapData );
 		addChild(gameInfo);
-		
 		startButton = new Buttons();
 		startButton.startButton();
 		startButton.x = 600;
 		startButton.y = 450;
 		startButton.addEventListener( MouseEvent.CLICK, startGame );
 		addChild( startButton );
-		
 	}
 	
 	/**
@@ -134,32 +148,31 @@ class Main extends Sprite
 			scoreMusic.stop();
 		}
 		menuMusic.stop();
+		//removeChild(endScreen);
 		removeChild(startButton);
 		removeChild(gameInfo);
 		
-		var bitmapData:BitmapData = Assets.getBitmapData("img/coasternews quiz background.jpg");
-		gameBackground = new Bitmap( bitmapData );
+		
 		addChild(gameBackground);
 		var songNumber = Std.random(3) + 1;
 		gameMusic = FlxG.sound.load("assets/music/gamemusic" +songNumber + ".ogg");
 		trace(songNumber);
 		gameMusic.play();
+		question.currentQuestion = 1;
 		
-		questionTime = 1;
 		lastUpdate = getTimer();
-		question  = new Question(this);
+		
 		addChild(question);
 		
-		checkAnswer  = new CheckAnswer(this, question);
+		
 		addChild(checkAnswer);
 		question.createAnswer();
 		question.createQuestion();
 		
 		stage.color = 0xffffff;
-		timerText = new TextField();
-		timerText.defaultTextFormat = question.questionTextFormat;
-		addChild(timerText);
 		
+		addChild(timerText);
+		questionTime = 1;
 		addEventListener(Event.ENTER_FRAME, update);
 	}
 	
@@ -221,9 +234,11 @@ class Main extends Sprite
 	{
 		
 		removeEventListener(Event.ENTER_FRAME, update);
+		questionTime  = 1000000;
 		removeChild(question);
 		removeChild(gameBackground);
 		removeChild(timerText);
+		addChild(endScreen);
 		endScreen.create();
 	}
 	
@@ -239,7 +254,10 @@ class Main extends Sprite
 		scoreMusic.play();
 		highScore.create();
 		addChild(highScore);
-		
+		checkAnswer.score = 0;
+		endScreen.reset();
+		question.reset();
+		//highScore.resetScoreField();
 	}
 	/* SETUP */
 

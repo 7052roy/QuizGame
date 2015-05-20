@@ -27,6 +27,7 @@ class EndScreen extends Sprite
 	{
 		super();
 		main = reference;
+		scoreText = new TextField();
 	}
 	
 	/**
@@ -34,7 +35,7 @@ class EndScreen extends Sprite
 	 */
 	public function create()
 	{
-		backGround();
+		
 		score();
 		nameField();
 		submit();
@@ -43,7 +44,7 @@ class EndScreen extends Sprite
 	/**
 	 * This function draws the background to the screen
 	 */
-	function backGround()
+	public function backGround()
 	{
 		var bitmapData:BitmapData = Assets.getBitmapData("img/coasternews quiz2.jpg");
 		var mainMenuBackground = new Bitmap( bitmapData );
@@ -53,9 +54,9 @@ class EndScreen extends Sprite
 	/**
 	 * this function creates a textfield where the players score is shown.
 	 */
-	function score()
+	public function score()
 	{
-		scoreText = new TextField();
+	
 		scoreText.text = main.checkAnswer.score + "";
 		scoreText.y = 220;
 		scoreText.x = 450;
@@ -109,6 +110,11 @@ class EndScreen extends Sprite
 			
 			main.resetEnd();
 		}
+	}
+	
+	public function reset()
+	{
+		scoreText.text = "";
 	}
 	
 }

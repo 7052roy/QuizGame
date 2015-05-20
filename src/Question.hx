@@ -33,12 +33,13 @@ class Question extends Sprite
 	var questionDb = null;
 	var answerCount:Int = 0;
 	var endScreen:EndScreen;
+	var answerCheck:CheckAnswer;
+	var answerText:TextField;
 
 	public function new(reference) 
 	{
 		super();
 		main = reference;
-		
 	}
 	
 	/**
@@ -63,9 +64,13 @@ class Question extends Sprite
 	 */
 	public function createAnswer()
 	{
+		/*while (answerOptions.length > 0)
+		{
+			answerOptions.pop();
+		}*/
 		for ( i in 0...3)
 		{
-			var answerText:TextField = new TextField();
+			answerText = new TextField();
 			answerText.defaultTextFormat = questionTextFormat;
 			answerText.x = 0;
 			answerText.y = 370 + 30 * i;
@@ -91,6 +96,7 @@ class Question extends Sprite
 		{
 			questionText.text = row.Question ;
 			correctAnswer = row.CorrectAnswer;
+			trace(correctAnswer);
 			var picture = row.Picture;
 			var scale:Float = 0.1;
 			var bitmapData:BitmapData = Assets.getBitmapData("img/"+picture+".jpg");
@@ -150,6 +156,11 @@ class Question extends Sprite
 		
 		
 		answerCount = 0;
+	}
+	
+	public function reset()
+	{
+		questionText.text = "";
 	}
 	
 }

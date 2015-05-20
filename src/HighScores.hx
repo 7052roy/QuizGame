@@ -30,6 +30,7 @@ class HighScores extends Sprite
 		main = reference;
 		super();
 		background();
+		//addButtons();
 	}
 	
 	/**
@@ -47,10 +48,13 @@ class HighScores extends Sprite
 	 */
 	public function create()
 	{
+		//resetScoreField();
 		while (endScores.length > 0)
 		{
-			endScores.pop();
+			removeChild(endScores.pop());
 		}
+		trace(endScores);
+		//endScores = new Array<TextField>();
 		scoreCount = 0;
 		viewScores();
 		addButtons();
@@ -83,6 +87,14 @@ class HighScores extends Sprite
 		}
 	}
 	
+	public function resetScoreField()
+	{
+		while (endScores.length > 0)
+		{
+		
+		}
+	}
+	
 	/**
 	 * This function requests the scores from the database and shows the on the screen
 	 */
@@ -91,11 +103,17 @@ class HighScores extends Sprite
 		
 		createScoreField();
 		scores = main.connect.request("SELECT * FROM highscores ORDER BY Score DESC");
+		var i:Int = 0;
 		for (row in scores) 
 		{
-			scoreName = row.Name + ": " + row.Score;
-			endScores[scoreCount].text = scoreName;
+			if (i < 10)
+			{
+				scoreName = row.Name + ": " + row.Score;
+				endScores[scoreCount].text = scoreName;
+				
+			}
 			scoreCount ++;
+			i ++;
 		}
 		
 	}
@@ -103,7 +121,7 @@ class HighScores extends Sprite
 	/**
 	 * This function adds the buttons to the highscore screen
 	 */
-	function addButtons()
+	public function addButtons()
 	{
 		addChild (scoreText);
 		exitButton = new Buttons();
