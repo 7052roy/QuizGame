@@ -52,12 +52,10 @@ class CheckAnswer extends Sprite
 		{
 			score += main.questionTime;
 			score += 3000;
-			//Sys.sleep(1);
 			main.questionTime = 100;
 			answerText.text = "Well done";
 		}else{
 			main.questionTime = 100;
-			//trace("Better luck next time");
 			answerText.text = "Better luck next time";
 		}
 	}
