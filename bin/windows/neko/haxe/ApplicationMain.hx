@@ -120,7 +120,7 @@ class ApplicationMain {
 			(true ? flash.Lib.ALLOW_SHADERS : 0) |
 			(false ? flash.Lib.REQUIRE_SHADERS : 0) |
 			(false ? flash.Lib.DEPTH_BUFFER : 0) |
-			(true ? flash.Lib.STENCIL_BUFFER : 0) |
+			(false ? flash.Lib.STENCIL_BUFFER : 0) |
 			(true ? flash.Lib.RESIZABLE : 0) |
 			(false ? flash.Lib.BORDERLESS : 0) |
 			(false ? flash.Lib.VSYNC : 0) |
@@ -487,7 +487,7 @@ class ApplicationMain {
 			orientation: "",
 			packageName: "QuizGame",
 			resizable: true,
-			stencilBuffer: true,
+			stencilBuffer: false,
 			title: "QuizGame",
 			version: "1.0.0",
 			vsync: false,

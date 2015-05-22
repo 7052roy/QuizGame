@@ -28,7 +28,6 @@ import openfl.system.System;
 
 class Main extends Sprite 
 {
-	
 	var inited:Bool;
 	var question:Question;	
 	public var checkAnswer:CheckAnswer;
@@ -75,6 +74,7 @@ class Main extends Sprite
 		
 		createGame();
 		mainMenu.create();
+		//Sys.sleep(1);
 		var songNumber = Std.random(3) + 1;
 		menuMusic = FlxG.sound.load("assets/music/menuMusic" +songNumber + ".ogg");
 		menuMusic.play();
@@ -202,7 +202,7 @@ class Main extends Sprite
 	 * 
 	 * @param	event
 	 */
-	public function update(event:Event)
+	function update(event:Event)
 	{
 		var currentTime:Int = Lib.getTimer();
 		var timePassed:Int  = currentTime - lastUpdate;

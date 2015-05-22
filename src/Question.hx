@@ -32,8 +32,6 @@ class Question extends Sprite
 	public var currentQuestion:Int = 1;
 	var questionDb = null;
 	var answerCount:Int = 0;
-	var endScreen:EndScreen;
-	var answerCheck:CheckAnswer;
 	var answerText:TextField;
 
 	public function new(reference) 

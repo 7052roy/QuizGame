@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.1.6
+-- version 4.3.11
 -- http://www.phpmyadmin.net
 --
--- Machine: 127.0.0.1
--- Gegenereerd op: 12 mei 2015 om 20:03
--- Serverversie: 5.6.16
--- PHP-versie: 5.5.9
+-- Host: 127.0.0.1
+-- Gegenereerd op: 22 mei 2015 om 22:10
+-- Serverversie: 5.6.24
+-- PHP-versie: 5.6.8
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -17,7 +17,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8 */;
 
 --
--- Databank: `quizgame`
+-- Database: `quizgame`
 --
 
 -- --------------------------------------------------------
@@ -27,14 +27,13 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE IF NOT EXISTS `answer` (
-  `Answer_ID` int(11) NOT NULL AUTO_INCREMENT,
+  `Answer_ID` int(11) NOT NULL,
   `Question_ID` int(11) NOT NULL,
-  `PossibleAnswer` varchar(100) NOT NULL,
-  PRIMARY KEY (`Answer_ID`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=19 ;
+  `PossibleAnswer` varchar(100) NOT NULL
+) ENGINE=InnoDB AUTO_INCREMENT=19 DEFAULT CHARSET=latin1;
 
 --
--- Gegevens worden uitgevoerd voor tabel `answer`
+-- Gegevens worden geëxporteerd voor tabel `answer`
 --
 
 INSERT INTO `answer` (`Answer_ID`, `Question_ID`, `PossibleAnswer`) VALUES
@@ -64,23 +63,18 @@ INSERT INTO `answer` (`Answer_ID`, `Question_ID`, `PossibleAnswer`) VALUES
 --
 
 CREATE TABLE IF NOT EXISTS `highscores` (
-  `HighScore_ID` int(11) NOT NULL AUTO_INCREMENT,
+  `HighScore_ID` int(11) NOT NULL,
   `Name` varchar(50) NOT NULL,
-  `Score` int(11) NOT NULL,
-  PRIMARY KEY (`HighScore_ID`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=7 ;
+  `Score` int(11) NOT NULL
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
 
 --
--- Gegevens worden uitgevoerd voor tabel `highscores`
+-- Gegevens worden geëxporteerd voor tabel `highscores`
 --
 
 INSERT INTO `highscores` (`HighScore_ID`, `Name`, `Score`) VALUES
 (1, 'roy', 0),
-(2, 'test', 34897),
-(3, 'test2', 53417),
-(4, 'sdfa', 18114),
-(5, 'fgbhd', 18265),
-(6, 'fd', 16823);
+(2, 'marco', 33767);
 
 -- --------------------------------------------------------
 
@@ -89,15 +83,14 @@ INSERT INTO `highscores` (`HighScore_ID`, `Name`, `Score`) VALUES
 --
 
 CREATE TABLE IF NOT EXISTS `question` (
-  `Question_ID` int(11) NOT NULL AUTO_INCREMENT,
+  `Question_ID` int(11) NOT NULL,
   `Question` varchar(100) NOT NULL,
   `Picture` varchar(50) NOT NULL,
-  `CorrectAnswer` varchar(50) NOT NULL,
-  PRIMARY KEY (`Question_ID`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=7 ;
+  `CorrectAnswer` varchar(50) NOT NULL
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=latin1;
 
 --
--- Gegevens worden uitgevoerd voor tabel `question`
+-- Gegevens worden geëxporteerd voor tabel `question`
 --
 
 INSERT INTO `question` (`Question_ID`, `Question`, `Picture`, `CorrectAnswer`) VALUES
@@ -108,6 +101,47 @@ INSERT INTO `question` (`Question_ID`, `Question`, `Picture`, `CorrectAnswer`) V
 (5, 'Where is this Roller coaster located?', 'GreatWhite', 'Moreys Pier'),
 (6, 'What is the name of this coaster?', 'KingDaKa', 'King Da Ka');
 
+--
+-- Indexen voor geëxporteerde tabellen
+--
+
+--
+-- Indexen voor tabel `answer`
+--
+ALTER TABLE `answer`
+  ADD PRIMARY KEY (`Answer_ID`);
+
+--
+-- Indexen voor tabel `highscores`
+--
+ALTER TABLE `highscores`
+  ADD PRIMARY KEY (`HighScore_ID`);
+
+--
+-- Indexen voor tabel `question`
+--
+ALTER TABLE `question`
+  ADD PRIMARY KEY (`Question_ID`);
+
+--
+-- AUTO_INCREMENT voor geëxporteerde tabellen
+--
+
+--
+-- AUTO_INCREMENT voor een tabel `answer`
+--
+ALTER TABLE `answer`
+  MODIFY `Answer_ID` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=19;
+--
+-- AUTO_INCREMENT voor een tabel `highscores`
+--
+ALTER TABLE `highscores`
+  MODIFY `HighScore_ID` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=3;
+--
+-- AUTO_INCREMENT voor een tabel `question`
+--
+ALTER TABLE `question`
+  MODIFY `Question_ID` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=7;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
