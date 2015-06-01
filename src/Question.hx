@@ -94,7 +94,6 @@ class Question extends Sprite
 		{
 			questionText.text = row.Question ;
 			correctAnswer = row.CorrectAnswer;
-			trace(correctAnswer);
 			var picture = row.Picture;
 			var scale:Float = 0.1;
 			var bitmapData:BitmapData = Assets.getBitmapData("img/"+picture+".jpg");
@@ -147,7 +146,7 @@ class Question extends Sprite
 		{
 			removeChild(image);
 		}
-		if(currentQuestion > 6)
+		if(currentQuestion > 10)
 		{
 			main.removeGame();
 		}

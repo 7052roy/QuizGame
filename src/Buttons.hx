@@ -28,6 +28,14 @@ class Buttons extends Sprite
 		buttonMode = true;
 	}
 	
+	public function mainMenuButton()
+	{
+		var buttonGraphic:openfl.display.BitmapData = Assets.getBitmapData( "img/MainMenu.png" );
+		var bitmap:openfl.display.Bitmap = new Bitmap( buttonGraphic );
+		addChild( bitmap );
+		buttonMode = true;
+	}
+	
 	/**
 	 * This function draws the exitButton
 	 */
@@ -55,7 +63,7 @@ class Buttons extends Sprite
 	 */
 	public function submitButton()
 	{
-		var buttonGraphic:openfl.display.BitmapData = Assets.getBitmapData( "img/Scores.png" );
+		var buttonGraphic:openfl.display.BitmapData = Assets.getBitmapData( "img/Submit.png" );
 		var bitmap:openfl.display.Bitmap = new Bitmap( buttonGraphic );
 		addChild( bitmap );
 		buttonMode = true;

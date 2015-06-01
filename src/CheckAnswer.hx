@@ -47,11 +47,10 @@ class CheckAnswer extends Sprite
 	 */
 	public function checkAnswer(givenAnswer:String):Void
 	{
-		trace(question);
 		if (givenAnswer == question.correctAnswer)
 		{
 			score += main.questionTime;
-			score += 3000;
+			score += 1000;
 			main.questionTime = 100;
 			answerText.text = "Well done";
 		}else{

@@ -53,8 +53,8 @@ class DefaultAssetLibrary extends AssetLibrary {
 		type.set ("assets/sounds/beep.ogg", AssetType.SOUND);
 		path.set ("assets/sounds/flixel.ogg", "assets/sounds/flixel.ogg");
 		type.set ("assets/sounds/flixel.ogg", AssetType.SOUND);
-		path.set ("img/Boomerang.jpg", "img/Boomerang.jpg");
-		type.set ("img/Boomerang.jpg", AssetType.IMAGE);
+		path.set ("img/Button quizgame.psd", "img/Button quizgame.psd");
+		type.set ("img/Button quizgame.psd", AssetType.BINARY);
 		path.set ("img/coasternews quiz background.jpg", "img/coasternews quiz background.jpg");
 		type.set ("img/coasternews quiz background.jpg", AssetType.IMAGE);
 		path.set ("img/coasternews quiz info.jpg", "img/coasternews quiz info.jpg");
@@ -63,20 +63,34 @@ class DefaultAssetLibrary extends AssetLibrary {
 		type.set ("img/coasternews quiz.jpg", AssetType.IMAGE);
 		path.set ("img/coasternews quiz2.jpg", "img/coasternews quiz2.jpg");
 		type.set ("img/coasternews quiz2.jpg", AssetType.IMAGE);
-		path.set ("img/Dominator.jpg", "img/Dominator.jpg");
-		type.set ("img/Dominator.jpg", AssetType.IMAGE);
 		path.set ("img/exit.png", "img/exit.png");
 		type.set ("img/exit.png", AssetType.IMAGE);
-		path.set ("img/GateKeeper.jpg", "img/GateKeeper.jpg");
-		type.set ("img/GateKeeper.jpg", AssetType.IMAGE);
-		path.set ("img/GreatWhite.jpg", "img/GreatWhite.jpg");
-		type.set ("img/GreatWhite.jpg", AssetType.IMAGE);
-		path.set ("img/KingDaKa.jpg", "img/KingDaKa.jpg");
-		type.set ("img/KingDaKa.jpg", AssetType.IMAGE);
 		path.set ("img/Scores.png", "img/Scores.png");
 		type.set ("img/Scores.png", AssetType.IMAGE);
 		path.set ("img/start.png", "img/start.png");
 		type.set ("img/start.png", AssetType.IMAGE);
+		path.set ("img/Submit.png", "img/Submit.png");
+		type.set ("img/Submit.png", AssetType.IMAGE);
+		path.set ("img/Boomerang.jpg", "img/Boomerang.jpg");
+		type.set ("img/Boomerang.jpg", AssetType.IMAGE);
+		path.set ("img/Dominator.jpg", "img/Dominator.jpg");
+		type.set ("img/Dominator.jpg", AssetType.IMAGE);
+		path.set ("img/GateKeeper.jpg", "img/GateKeeper.jpg");
+		type.set ("img/GateKeeper.jpg", AssetType.IMAGE);
+		path.set ("img/GreatWhite.jpg", "img/GreatWhite.jpg");
+		type.set ("img/GreatWhite.jpg", AssetType.IMAGE);
+		path.set ("img/Joker.jpg", "img/Joker.jpg");
+		type.set ("img/Joker.jpg", AssetType.IMAGE);
+		path.set ("img/KingDaKa.jpg", "img/KingDaKa.jpg");
+		type.set ("img/KingDaKa.jpg", AssetType.IMAGE);
+		path.set ("img/MainMenu.png", "img/MainMenu.png");
+		type.set ("img/MainMenu.png", AssetType.IMAGE);
+		path.set ("img/RideOfSteel.jpg", "img/RideOfSteel.jpg");
+		type.set ("img/RideOfSteel.jpg", AssetType.IMAGE);
+		path.set ("img/SpaceMountain.jpg", "img/SpaceMountain.jpg");
+		type.set ("img/SpaceMountain.jpg", AssetType.IMAGE);
+		path.set ("img/TimeWarp.jpg", "img/TimeWarp.jpg");
+		type.set ("img/TimeWarp.jpg", AssetType.IMAGE);
 		path.set ("img/Tornado.jpg", "img/Tornado.jpg");
 		type.set ("img/Tornado.jpg", AssetType.IMAGE);
 		path.set ("assets/music/gamemusic1.ogg", "assets/music/gamemusic1.ogg");
@@ -106,9 +120,9 @@ class DefaultAssetLibrary extends AssetLibrary {
 		id = "assets/sounds/flixel.ogg";
 		path.set (id, id);
 		type.set (id, AssetType.SOUND);
-		id = "img/Boomerang.jpg";
+		id = "img/Button quizgame.psd";
 		path.set (id, id);
-		type.set (id, AssetType.IMAGE);
+		type.set (id, AssetType.BINARY);
 		id = "img/coasternews quiz background.jpg";
 		path.set (id, id);
 		type.set (id, AssetType.IMAGE);
@@ -121,10 +135,22 @@ class DefaultAssetLibrary extends AssetLibrary {
 		id = "img/coasternews quiz2.jpg";
 		path.set (id, id);
 		type.set (id, AssetType.IMAGE);
-		id = "img/Dominator.jpg";
+		id = "img/exit.png";
 		path.set (id, id);
 		type.set (id, AssetType.IMAGE);
-		id = "img/exit.png";
+		id = "img/Scores.png";
+		path.set (id, id);
+		type.set (id, AssetType.IMAGE);
+		id = "img/start.png";
+		path.set (id, id);
+		type.set (id, AssetType.IMAGE);
+		id = "img/Submit.png";
+		path.set (id, id);
+		type.set (id, AssetType.IMAGE);
+		id = "img/Boomerang.jpg";
+		path.set (id, id);
+		type.set (id, AssetType.IMAGE);
+		id = "img/Dominator.jpg";
 		path.set (id, id);
 		type.set (id, AssetType.IMAGE);
 		id = "img/GateKeeper.jpg";
@@ -133,13 +159,22 @@ class DefaultAssetLibrary extends AssetLibrary {
 		id = "img/GreatWhite.jpg";
 		path.set (id, id);
 		type.set (id, AssetType.IMAGE);
+		id = "img/Joker.jpg";
+		path.set (id, id);
+		type.set (id, AssetType.IMAGE);
 		id = "img/KingDaKa.jpg";
 		path.set (id, id);
 		type.set (id, AssetType.IMAGE);
-		id = "img/Scores.png";
+		id = "img/MainMenu.png";
 		path.set (id, id);
 		type.set (id, AssetType.IMAGE);
-		id = "img/start.png";
+		id = "img/RideOfSteel.jpg";
+		path.set (id, id);
+		type.set (id, AssetType.IMAGE);
+		id = "img/SpaceMountain.jpg";
+		path.set (id, id);
+		type.set (id, AssetType.IMAGE);
+		id = "img/TimeWarp.jpg";
 		path.set (id, id);
 		type.set (id, AssetType.IMAGE);
 		id = "img/Tornado.jpg";
@@ -199,9 +234,23 @@ class DefaultAssetLibrary extends AssetLibrary {
 		
 		
 		
+		
+		
+		
+		
+		
+		
+		
 		#if (windows || mac || linux)
 		
 		var useManifest = false;
+		useManifest = true;
+		useManifest = true;
+		useManifest = true;
+		useManifest = true;
+		useManifest = true;
+		useManifest = true;
+		useManifest = true;
 		useManifest = true;
 		useManifest = true;
 		useManifest = true;
@@ -867,7 +916,21 @@ class DefaultAssetLibrary extends AssetLibrary {
 
 
 
+
+
+
+
+
+
+
 #elseif html5
+
+
+
+
+
+
+
 
 
 
@@ -968,8 +1031,8 @@ class DefaultAssetLibrary extends AssetLibrary {
 		type.set ("assets/sounds/beep.ogg", AssetType.SOUND);
 		path.set ("assets/sounds/flixel.ogg", "assets/sounds/flixel.ogg");
 		type.set ("assets/sounds/flixel.ogg", AssetType.SOUND);
-		path.set ("img/Boomerang.jpg", "img/Boomerang.jpg");
-		type.set ("img/Boomerang.jpg", AssetType.IMAGE);
+		path.set ("img/Button quizgame.psd", "img/Button quizgame.psd");
+		type.set ("img/Button quizgame.psd", AssetType.BINARY);
 		path.set ("img/coasternews quiz background.jpg", "img/coasternews quiz background.jpg");
 		type.set ("img/coasternews quiz background.jpg", AssetType.IMAGE);
 		path.set ("img/coasternews quiz info.jpg", "img/coasternews quiz info.jpg");
@@ -978,20 +1041,34 @@ class DefaultAssetLibrary extends AssetLibrary {
 		type.set ("img/coasternews quiz.jpg", AssetType.IMAGE);
 		path.set ("img/coasternews quiz2.jpg", "img/coasternews quiz2.jpg");
 		type.set ("img/coasternews quiz2.jpg", AssetType.IMAGE);
-		path.set ("img/Dominator.jpg", "img/Dominator.jpg");
-		type.set ("img/Dominator.jpg", AssetType.IMAGE);
 		path.set ("img/exit.png", "img/exit.png");
 		type.set ("img/exit.png", AssetType.IMAGE);
-		path.set ("img/GateKeeper.jpg", "img/GateKeeper.jpg");
-		type.set ("img/GateKeeper.jpg", AssetType.IMAGE);
-		path.set ("img/GreatWhite.jpg", "img/GreatWhite.jpg");
-		type.set ("img/GreatWhite.jpg", AssetType.IMAGE);
-		path.set ("img/KingDaKa.jpg", "img/KingDaKa.jpg");
-		type.set ("img/KingDaKa.jpg", AssetType.IMAGE);
 		path.set ("img/Scores.png", "img/Scores.png");
 		type.set ("img/Scores.png", AssetType.IMAGE);
 		path.set ("img/start.png", "img/start.png");
 		type.set ("img/start.png", AssetType.IMAGE);
+		path.set ("img/Submit.png", "img/Submit.png");
+		type.set ("img/Submit.png", AssetType.IMAGE);
+		path.set ("img/Boomerang.jpg", "img/Boomerang.jpg");
+		type.set ("img/Boomerang.jpg", AssetType.IMAGE);
+		path.set ("img/Dominator.jpg", "img/Dominator.jpg");
+		type.set ("img/Dominator.jpg", AssetType.IMAGE);
+		path.set ("img/GateKeeper.jpg", "img/GateKeeper.jpg");
+		type.set ("img/GateKeeper.jpg", AssetType.IMAGE);
+		path.set ("img/GreatWhite.jpg", "img/GreatWhite.jpg");
+		type.set ("img/GreatWhite.jpg", AssetType.IMAGE);
+		path.set ("img/Joker.jpg", "img/Joker.jpg");
+		type.set ("img/Joker.jpg", AssetType.IMAGE);
+		path.set ("img/KingDaKa.jpg", "img/KingDaKa.jpg");
+		type.set ("img/KingDaKa.jpg", AssetType.IMAGE);
+		path.set ("img/MainMenu.png", "img/MainMenu.png");
+		type.set ("img/MainMenu.png", AssetType.IMAGE);
+		path.set ("img/RideOfSteel.jpg", "img/RideOfSteel.jpg");
+		type.set ("img/RideOfSteel.jpg", AssetType.IMAGE);
+		path.set ("img/SpaceMountain.jpg", "img/SpaceMountain.jpg");
+		type.set ("img/SpaceMountain.jpg", AssetType.IMAGE);
+		path.set ("img/TimeWarp.jpg", "img/TimeWarp.jpg");
+		type.set ("img/TimeWarp.jpg", AssetType.IMAGE);
 		path.set ("img/Tornado.jpg", "img/Tornado.jpg");
 		type.set ("img/Tornado.jpg", AssetType.IMAGE);
 		path.set ("assets/music/gamemusic1.ogg", "assets/music/gamemusic1.ogg");
@@ -1021,9 +1098,9 @@ class DefaultAssetLibrary extends AssetLibrary {
 		id = "assets/sounds/flixel.ogg";
 		path.set (id, id);
 		type.set (id, AssetType.SOUND);
-		id = "img/Boomerang.jpg";
+		id = "img/Button quizgame.psd";
 		path.set (id, id);
-		type.set (id, AssetType.IMAGE);
+		type.set (id, AssetType.BINARY);
 		id = "img/coasternews quiz background.jpg";
 		path.set (id, id);
 		type.set (id, AssetType.IMAGE);
@@ -1036,10 +1113,22 @@ class DefaultAssetLibrary extends AssetLibrary {
 		id = "img/coasternews quiz2.jpg";
 		path.set (id, id);
 		type.set (id, AssetType.IMAGE);
-		id = "img/Dominator.jpg";
+		id = "img/exit.png";
 		path.set (id, id);
 		type.set (id, AssetType.IMAGE);
-		id = "img/exit.png";
+		id = "img/Scores.png";
+		path.set (id, id);
+		type.set (id, AssetType.IMAGE);
+		id = "img/start.png";
+		path.set (id, id);
+		type.set (id, AssetType.IMAGE);
+		id = "img/Submit.png";
+		path.set (id, id);
+		type.set (id, AssetType.IMAGE);
+		id = "img/Boomerang.jpg";
+		path.set (id, id);
+		type.set (id, AssetType.IMAGE);
+		id = "img/Dominator.jpg";
 		path.set (id, id);
 		type.set (id, AssetType.IMAGE);
 		id = "img/GateKeeper.jpg";
@@ -1048,13 +1137,22 @@ class DefaultAssetLibrary extends AssetLibrary {
 		id = "img/GreatWhite.jpg";
 		path.set (id, id);
 		type.set (id, AssetType.IMAGE);
+		id = "img/Joker.jpg";
+		path.set (id, id);
+		type.set (id, AssetType.IMAGE);
 		id = "img/KingDaKa.jpg";
 		path.set (id, id);
 		type.set (id, AssetType.IMAGE);
-		id = "img/Scores.png";
+		id = "img/MainMenu.png";
 		path.set (id, id);
 		type.set (id, AssetType.IMAGE);
-		id = "img/start.png";
+		id = "img/RideOfSteel.jpg";
+		path.set (id, id);
+		type.set (id, AssetType.IMAGE);
+		id = "img/SpaceMountain.jpg";
+		path.set (id, id);
+		type.set (id, AssetType.IMAGE);
+		id = "img/TimeWarp.jpg";
 		path.set (id, id);
 		type.set (id, AssetType.IMAGE);
 		id = "img/Tornado.jpg";
@@ -1121,11 +1219,25 @@ class DefaultAssetLibrary extends AssetLibrary {
 		
 		
 		
+		
+		
+		
+		
+		
+		
+		
 		#end
 		
 		#if (windows || mac || linux)
 		
 		var useManifest = false;
+		useManifest = true;
+		useManifest = true;
+		useManifest = true;
+		useManifest = true;
+		useManifest = true;
+		useManifest = true;
+		useManifest = true;
 		useManifest = true;
 		useManifest = true;
 		useManifest = true;
@@ -1775,7 +1887,21 @@ class DefaultAssetLibrary extends AssetLibrary {
 
 
 
+
+
+
+
+
+
+
 #elseif html5
+
+
+
+
+
+
+
 
 
 

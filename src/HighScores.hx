@@ -128,7 +128,7 @@ class HighScores extends Sprite
 		addChild( startButton );
 		
 		mainMenuButton = new Buttons();
-		mainMenuButton.startButton();
+		mainMenuButton.mainMenuButton();
 		mainMenuButton.x = 450;
 		mainMenuButton.y = 250;
 		mainMenuButton.addEventListener( MouseEvent.CLICK, main.create );

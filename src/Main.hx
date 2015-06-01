@@ -77,7 +77,7 @@ class Main extends Sprite
 		//Sys.sleep(1);
 		var songNumber = Std.random(3) + 1;
 		menuMusic = FlxG.sound.load("assets/music/menuMusic" +songNumber + ".ogg");
-		menuMusic.play();
+		menuMusic.play(true);
 		
 	}
 	
@@ -112,7 +112,7 @@ class Main extends Sprite
 		scoreMusic.stop();
 		var songNumber = Std.random(3) + 1;
 		menuMusic = FlxG.sound.load("assets/music/menuMusic" +songNumber + ".ogg");
-		menuMusic.play();
+		menuMusic.play(true);
 		removeChild(highScore);
 		addChild(mainMenu);
 	}
@@ -156,8 +156,7 @@ class Main extends Sprite
 		addChild(gameBackground);
 		var songNumber = Std.random(3) + 1;
 		gameMusic = FlxG.sound.load("assets/music/gamemusic" +songNumber + ".ogg");
-		trace(songNumber);
-		gameMusic.play();
+		gameMusic.play(true);
 		question.currentQuestion = 1;
 		
 		lastUpdate = getTimer();
@@ -191,7 +190,7 @@ class Main extends Sprite
 		menuMusic.stop();
 		var songNumber = Std.random(2) + 1;
 		scoreMusic = FlxG.sound.load("assets/music/scoreMusic" +songNumber + ".ogg");
-		scoreMusic.play();
+		scoreMusic.play(true);
 		removeChild(mainMenu);
 		highScore.create();
 		addChild(highScore);
@@ -214,13 +213,13 @@ class Main extends Sprite
 		
 		if (questionTime < 0)
 		{
-			if (question.currentQuestion < 8)
+			if (question.currentQuestion < 12)
 			{
 				question.resetQuestion();
 				question.fillFields();
 				question.currentQuestion ++;
 			}
-			if (question.currentQuestion == 8)
+			if (question.currentQuestion == 12)
 			{
 				removeGame();
 			}
@@ -251,7 +250,7 @@ class Main extends Sprite
 		removeChild(endScreen);
 		var songNumber = Std.random(2) + 1;
 		scoreMusic = FlxG.sound.load("assets/music/scoreMusic" +songNumber + ".ogg");
-		scoreMusic.play();
+		scoreMusic.play(true);
 		highScore.create();
 		addChild(highScore);
 		checkAnswer.score = 0;
