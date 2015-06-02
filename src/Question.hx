@@ -62,10 +62,6 @@ class Question extends Sprite
 	 */
 	public function createAnswer()
 	{
-		/*while (answerOptions.length > 0)
-		{
-			answerOptions.pop();
-		}*/
 		for ( i in 0...3)
 		{
 			answerText = new TextField();
@@ -75,7 +71,7 @@ class Question extends Sprite
 			answerText.width = 800;
 			answerText.height = 50;
 			answerOptions.push(answerText);
-			addChild (answerText);	
+			addChild (answerText);
 		}
 	}
 	
@@ -103,8 +99,6 @@ class Question extends Sprite
 			image.width = 500;
 			image.height = 340;
 			addChild( image );
-			//Actuate.tween (image, 2, { alpha: 1, width: 500, height: 340 } ).ease (Sine.easeIn);
-			
 		}
 		
 		for (row in answerDb) 
