@@ -41,7 +41,7 @@ class Main extends Sprite
 	var startButton:Buttons;
 	public var endScreen:EndScreen;
 	var gameBackground:Bitmap;
-	var gameInfo:Bitmap;
+	var gameInfo:GameInfo;
 	var highScore:HighScores;
 	
 	//This variable connects towards the database.
@@ -71,6 +71,7 @@ class Main extends Sprite
 		mainMenu = new MainMenu(this);
 		addChild(mainMenu);
 		endScreen = new EndScreen(this);
+		gameInfo = new GameInfo(this);
 		
 		createGame();
 		mainMenu.create();
@@ -83,10 +84,6 @@ class Main extends Sprite
 	
 	function createGame()
 	{
-		var bitmapData:BitmapData = Assets.getBitmapData("img/coasternews quiz info.jpg");
-		gameInfo = new Bitmap( bitmapData );
-		
-		
 		var bitmapData2:BitmapData = Assets.getBitmapData("img/coasternews quiz background.jpg");
 		gameBackground = new Bitmap( bitmapData2 );
 		
@@ -107,7 +104,7 @@ class Main extends Sprite
 	 * 
 	 * @param	event
 	 */
-	public function create(event:MouseEvent)
+	public function createMenu(event:MouseEvent)
 	{
 		scoreMusic.stop();
 		var songNumber = Std.random(3) + 1;
@@ -127,13 +124,9 @@ class Main extends Sprite
 	{
 		removeChild(mainMenu);
 		highScore.scoreCount = 0;
+		gameInfo.button();
 		addChild(gameInfo);
-		startButton = new Buttons();
-		startButton.startButton();
-		startButton.x = 600;
-		startButton.y = 450;
-		startButton.addEventListener( MouseEvent.CLICK, startGame );
-		addChild( startButton );
+		
 	}
 	
 	/**
